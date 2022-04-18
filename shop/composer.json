@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "psr-4": {
+            "ax-ross\\": "vendor/ax-ross",
+            "app\\": "app"
+        }
+    },
+    "require": {
+    }
+}
