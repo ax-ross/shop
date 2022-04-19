@@ -7,6 +7,6 @@ Router::add('#^admin/?$#', ['controller' => 'Main', 'action' => 'index', 'admin_
 
 Router::add('#^admin/(?<controller>[a-z-]+)/?(?<action>[a-z-]+)?$#', ['admin_prefix' => 'admin']);
 
-Router::add('#^$#', ['controller' => 'Main', 'action' => 'index']);
+Router::add('#^$#', ['controller' => 'Main']);
 
 Router::add('#^(?<controller>[a-z-]+)/(?<action>[a-z-]+)/?$#');
