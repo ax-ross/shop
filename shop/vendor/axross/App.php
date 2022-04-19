@@ -8,9 +8,11 @@ class App
 
     public function __construct()
     {
+        $url = trim(urldecode($_SERVER['REQUEST_URI']), '/');
         new ErrorHandler;
         self::$app = Registry::getInstance();
         $this->getParams();
+        Router::dispatch($url);
     }
 
     protected function getParams()
