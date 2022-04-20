@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
-class MainController
+use axross\Controller;
+
+class MainController extends Controller
 {
 
     public function indexAction()
