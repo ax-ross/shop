@@ -53,5 +53,13 @@ class View
         }
     }
 
+    public function getPart($file, $data = null)
+    {
+        if (is_array($data)) extract($data);
+        $file = APP . "/views/{$file}.php";
+        if (file_exists($file)) require $file;
+        else echo "Файл {$file} не найден";
+    }
+
 
 }
