@@ -1,3 +1,51 @@
+/* Common base styles */
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    line-height: 27px;
+    font-weight: 400;
+    min-width: 320px;
 }
+
+/* image adaptability */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: #f96;
+    transition: all .5s;
+}
+
+/* mouse hove and focus */
+a:hover,
+a:focus {
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* selection text */
+::selection {
+    background-color: #f96;
+    color: #fff;
+}
+/* END Common base styles */
+
+
+/* Header top */
+.header-top {
+    background-color: #f96;
+    position: relative;
+}
+
+.header-top a {
+    color: #fff;
+}
+
+.header-top a:hover {
+    color: #000;
+}
+/* END Header top */
