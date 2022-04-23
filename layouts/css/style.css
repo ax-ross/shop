@@ -32,6 +32,26 @@ a:focus {
     background-color: #f96;
     color: #fff;
 }
+
+.btn{
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* dropdowns styles */
+li a.dropdown-item {
+    color: #000;
+}
+
+li a.dropdown-item:focus,
+li a.dropdown-item:hover {
+    background-color: #f96;
+    color: #fff;
+}
+
+
+
 /* END Common base styles */
 
 
@@ -48,4 +68,92 @@ a:focus {
 .header-top a:hover {
     color: #000;
 }
+
+
+#search {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transition: all .2s;
+    transform: scale(0);
+    display: flex;
+    background-color: #f96;
+    z-index: 1;
+}
+
+#search.active {
+    transform: scale(1);
+}
+
+#search .form-control {
+    border-radius: 0;
+}
+
+.header-top .icons a {
+    padding: 10px;
+}
+
+.header-top .icons i,
+.icon-phone {
+    font-size: 23px;
+}
+
+
+.open-cart-modal {
+    position: relative;
+}
+
+.header-top .count-items {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+}
+
+.modal-header {
+    background-color: #f96;
+    color: #fff;
+}
+
+.modal-body img{
+    max-width: 100px;
+}
+
+.modal-body a {
+    color: #f96;
+}
+
+.modal-footer .continue-shoping{
+    background-color: #f96;
+    border-color: #f96;
+    color: #fff;
+}
+
+.modal-footer .continue-shoping:hover{
+    background-color: #ffa87d;
+}
+
+.modal-footer .continue-shoping:focus,
+.modal-footer .continue-shoping.focus {
+    box-shadow: 0 0 0 .2rem rgba(255, 153, 102, 0.5)
+}
+
+.modal-footer .checkout{
+    border-color: #f96;
+    color: #f96;
+}
+
+.modal-footer .checkout:hover{
+    background-color: #ffa87d;
+    color: #fff;
+}
+
+.modal-footer .checkout:focus,
+.modal-footer .checkout.focus {
+    box-shadow: 0 0 0 .2rem rgba(255, 153, 102, 0.5)
+}
+
+
 /* END Header top */

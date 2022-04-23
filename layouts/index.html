@@ -17,18 +17,85 @@
     <header>
         <div class="header-top py-3">
             <div class="container">
-                <div class="row">
+                <div class="row justify-content-between">
                     <div class="col">
-                        <a href="tel:+71234567890">
-                            <span><i class="bi bi-telephone"></i></span>+7 123 456-78-90
+                        <a href="tel:+71234567890" class="icon-phone">
+                            <span class="pe-2"><i class="bi bi-telephone"></i></span>+7 123 456-78-90
                         </a>
                     </div>
                     <div class="col icons text-end">
+
+                        <form action="" id="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." name="search">
+                                <button class="btn close-search" type="button"><i class="bi bi-x"></i></button>
+                                <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+                            </div>
+                        </form>
+
                         <a href="" class="open-search"><i class="bi bi-search"></i></a>
 
-                        <a href=""><i class="bi bi-cart"></i></a>
+                        <!-- Button trigger modal -->
+                        <a href="" data-bs-toggle="modal" data-bs-target="#cart-modal" class="open-cart-modal">
+                            <i class="bi bi-cart"></i>
+                            <span class="badge bg-danger rounded-pill count-items">0</span>
+                        </a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="cart-modal" aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="cart-modal">Корзина</h5>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <table class="table text-start">
+                                        <thead>
+                                          <tr>
+                                            <th scope="col">Фото</th>
+                                            <th scope="col">Товар</th>
+                                            <th scope="col">Кол-во</th>
+                                            <th scope="col">Цена</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td><a href=""><img src="https://via.placeholder.com/400x300" alt=""></a></td>
+                                            <td><a href="">Name 1</a></td>
+                                            <td>1</td>
+                                            <td>100</td>
+                                          </tr>
+                                          <tr>
+                                            <td><a href=""><img src="https://via.placeholder.com/300x400" alt=""></a></td>
+                                            <td><a href="">Name 2</a></td></td>
+                                            <td>1</td>
+                                            <td>100</td>
+                                          </tr>
+                                          <tr>
+                                            <td><a href=""><img src="https://via.placeholder.com/400x400" alt=""></a></td>
+                                            <td><a href="">Name 3</a></td></td>
+                                            <td>1</td>
+                                            <td>100</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn continue-shoping " data-bs-dismiss="modal">Продолжить покупки</button>
+                                  <button type="button" class="btn checkout">Оформить заказ</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         
-                        <a href=""><i class="bi bi-person"></i></a>
+                          <div class="dropdown d-inline-block">
+                            <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Авторизация</a></li>
+                                <li><a class="dropdown-item" href="#">Регистрация</a></li>
+                            </ul>
+                          </div>
+                        
                     </div>
                 </div>
             </div>
