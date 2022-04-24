@@ -9,4 +9,12 @@ $(function() {
         $('#search').removeClass('active');
     });
 
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+            $('#go-up').fadeIn();
+        } else {
+            $('#go-up').fadeOut();
+        }
+    });
+
 })
