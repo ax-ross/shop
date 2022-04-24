@@ -33,6 +33,40 @@ a:focus {
     color: #fff;
 }
 
+section {
+    padding: 50px 0;
+}
+
+.section-title {
+    overflow: hidden;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-title::before {
+    margin-left: -90%;
+}
+
+.section-title::after {
+    margin-right: -90%;
+}
+
+.section-title::before,
+.section-title::after{
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    width: 90%;
+    height: 1px;
+    background: #000;
+    border: solid #fff;
+    border-width: 0 10px;
+}
+
+
 .btn{
     position: relative;
     overflow: hidden;
@@ -198,11 +232,92 @@ li a.dropdown-item:hover {
 }
 /* END Carousel */
 
+
+/* Product card */
+
+.product-card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    transition: all .3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
+}
+
+.product-card .product-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    padding: 20px;
+}
+
+.product-card .product-img img {
+    max-height: 100%;
+}
+
+.product-card .product-details {
+    padding: 30px;
+}
+
+.product-card .product-details h4 a {
+    font-weight: 500;
+    display: block;
+    height: 60px; 
+    overflow: hidden;
+}
+
+.product-card .product-details p {
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 18px;
+    color: #999;
+    height: 44px; 
+    overflow: hidden;
+}
+
+.product-card .product-bottom-details {
+    overflow: hidden;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.product-card .product-price {
+    font-size: 18px;
+    color: #f96;
+    font-weight: 600;
+}
+
+.product-card .product-price small {
+    color: #ccc;
+    font-weight: 400;
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+
+.product-card .product-links{
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* END Product card */
+
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
 	.navbar .nav-item .dropdown-menu{ display: none; }
-	.navbar .nav-item:hover .nav-link{   }
 	.navbar .nav-item:hover .dropdown-menu{ display: block; }
 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
 }	
 /* ============ desktop view .end// ============ */
+
+@media only screen and (max-width: 991px) {
+    .product-card .product-img {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .section-title {
+        font-size: 20px;
+    }
+}
