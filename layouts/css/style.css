@@ -156,6 +156,8 @@ li a.dropdown-item:hover {
 }
 
 /* END Header top */
+
+/* Header bottom */
 .header-bottom .navbar-brand {
     color: #000;
     font-weight: 700;
@@ -183,8 +185,18 @@ li a.dropdown-item:hover {
     box-shadow: 0 0 0 .1rem;
 }
 
-/* Header bottom */
+/*END  Header bottom */
 
+
+/* Carousel */
+.my-carousel .carousel-item {
+    max-height: 500px;
+    display: flex;
+}
+.my-carousel .carousel-item img {
+    object-fit: cover;
+}
+/* END Carousel */
 
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
