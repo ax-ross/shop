@@ -97,7 +97,7 @@ li a.dropdown-item:hover {
 
 .header-top .icons i,
 .icon-phone {
-    font-size: 23px;
+    font-size: 18px;
 }
 
 
@@ -155,5 +155,42 @@ li a.dropdown-item:hover {
     box-shadow: 0 0 0 .2rem rgba(255, 153, 102, 0.5)
 }
 
-
 /* END Header top */
+.header-bottom .navbar-brand {
+    color: #000;
+    font-weight: 700;
+}
+
+.header-bottom .navbar-brand:hover {
+    color: #f96;
+}
+
+.header-bottom .navbar-nav .nav-link {
+    color: #000;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.header-bottom .navbar-nav .nav-link:hover {
+    color: #f96;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 .1rem;
+}
+
+/* Header bottom */
+
+
+/* ============ desktop view ============ */
+@media all and (min-width: 992px) {
+	.navbar .nav-item .dropdown-menu{ display: none; }
+	.navbar .nav-item:hover .nav-link{   }
+	.navbar .nav-item:hover .dropdown-menu{ display: block; }
+	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+}	
+/* ============ desktop view .end// ============ */
