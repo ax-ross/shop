@@ -21,4 +21,8 @@ $(function() {
         $('body, html').animate({scrollTop: 0}, 500);
     });
 
+    $('.sidebar-toggler .btn').click(function() {
+        $('.sidebar-toggle').slideToggle();
+    });
+
 })

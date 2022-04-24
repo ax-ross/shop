@@ -416,11 +416,36 @@ li a.dropdown-item:hover {
 
 /* END Go-up button */
 
+/* Category page */
+
+.sidebar-toggler .btn {
+    width: 100%;
+}
+
+.sidebar-toggle {
+    display: none;
+}
+
+.sidebar .list-group-item.active{
+    background-color: #f96;
+    border-color: #f96;
+}
+
+/* END Category page */
+
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
 	.navbar .nav-item .dropdown-menu{ display: none; }
 	.navbar .nav-item:hover .dropdown-menu{ display: block; }
 	.navbar .nav-item .dropdown-menu{ margin-top:0; }
+
+    .sidebar-toggler {
+        display: none;
+    }
+
+    .sidebar-toggle {
+        display: block !important;
+    }
 }	
 /* ============ desktop view .end// ============ */
 
