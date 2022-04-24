@@ -390,6 +390,32 @@ li a.dropdown-item:hover {
 
 /* END Footer */
 
+
+/* Go-up button */
+
+#go-up{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #f96;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 0;
+    font-size: 25px;
+    opacity: .5;
+    display: none;
+    z-index: 10;
+    color: #fff;
+}
+
+#go-up:hover{
+    opacity: 1;
+    transition: all .5s;
+}
+
+/* END Go-up button */
+
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
 	.navbar .nav-item .dropdown-menu{ display: none; }
@@ -424,5 +450,9 @@ li a.dropdown-item:hover {
 
     .header-top .icons i, .icon-phone {
         font-size: 16px;
+    }
+
+    .modal-body img {
+        max-width: 50px;
     }
 }
