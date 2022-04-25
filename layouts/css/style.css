@@ -7,6 +7,10 @@ body {
     min-width: 320px;
 }
 
+h1 {
+    font-size: 1.5rem;
+}
+
 /* image adaptability */
 img {
     max-width: 100%;
@@ -429,6 +433,42 @@ li a.dropdown-item:hover {
 .sidebar .list-group-item.active{
     background-color: #f96;
     border-color: #f96;
+}
+
+.page-link{
+    color: #f96;
+}
+
+.page-item.active .page-link {
+    background-color: #f96;
+    border-color: #f96;
+}
+
+.page-link:hover{
+    color: #fff;
+    background-color: #f96;
+    border-color: #f96;
+}
+
+.page-link:focus {
+    z-index: 10;
+    color: #fff;
+    background-color: #f96;
+    box-shadow: 0 0 0 .2rem rgba(204, 122, 82, 1)
+}
+
+.form-select:focus {
+    border-color: #f96;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem #f96;
+}
+.form-select:focus-visible {
+    outline: 2px solid #f96;
+    border-color: #f96;
+}
+
+.input-group-text, .form-select {
+    font-size: 14px;
 }
 
 /* END Category page */
