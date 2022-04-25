@@ -652,4 +652,9 @@ btn-buy:focus-visible {
     .modal-body img {
         max-width: 50px;
     }
+
+    .thumbnails .thumb-main img {
+        max-width: 100%;
+    }
+
 }
