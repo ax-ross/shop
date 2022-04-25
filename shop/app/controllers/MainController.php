@@ -2,15 +2,14 @@
 
 namespace app\controllers;
 
-use axross\Controller;
+use RedBeanPHP\R;
 
-class MainController extends Controller
+class MainController extends AppController
 {
 
     public function indexAction()
     {
-        $names = $this->model->get_names();
-        $this->set(compact('names'));
-        $this->setMeta('Главная страница', 'Description...', 'keywords...');
+        $slides = R::findAll('slider');
+        $this->set(compact('slides'));
     }
 }
