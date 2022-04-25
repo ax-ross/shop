@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <title>Shop</title>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-top py-3">
+            <div class="container">
+                <div class="row justify-content-between">
+                    <div class="col">
+                        <a href="tel:+71234567890" class="icon-phone">
+                            <span class="pe-2"><i class="bi bi-telephone"></i></span>+7 123 456-78-90
+                        </a>
+                    </div>
+                    <div class="col icons text-end">
+
+                        <form action="" id="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search..." aria-label="Search..."
+                                    name="search">
+                                <button class="btn close-search" type="button"><i class="bi bi-x"></i></button>
+                                <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+                            </div>
+                        </form>
+
+                        <a href="" class="open-search"><i class="bi bi-search"></i></a>
+
+                        <!-- Button trigger modal -->
+                        <a href="" data-bs-toggle="modal" data-bs-target="#cart-modal" class="open-cart-modal">
+                            <i class="bi bi-cart"></i>
+                            <span class="badge bg-danger rounded-pill count-items">0</span>
+                        </a>
+                        <a href=""><i class="bi bi-heart"></i></a>
+                        <!-- Modal -->
+                        <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="cart-modal"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cart-modal">Корзина</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <table class="table text-start">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Фото</th>
+                                                    <th scope="col">Товар</th>
+                                                    <th scope="col">Кол-во</th>
+                                                    <th scope="col">Цена</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td><a href=""><img src="https://via.placeholder.com/400x300"
+                                                                alt=""></a></td>
+                                                    <td><a href="">Name 1</a></td>
+                                                    <td>1</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href=""><img src="https://via.placeholder.com/300x400"
+                                                                alt=""></a></td>
+                                                    <td><a href="">Name 2</a></td>
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td><a href=""><img src="https://via.placeholder.com/400x400"
+                                                                alt=""></a></td>
+                                                    <td><a href="">Name 3</a></td>
+                                                    </td>
+                                                    <td>1</td>
+                                                    <td>100</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn continue-shoping "
+                                            data-bs-dismiss="modal">Продолжить
+                                            покупки</button>
+                                        <button type="button" class="btn checkout">Оформить заказ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown d-inline-block">
+                            <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i
+                                    class="bi bi-person"></i></a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                <li><a class="dropdown-item" href="#">Авторизация</a></li>
+                                <li><a class="dropdown-item" href="#">Регистрация</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div> <!-- END Header-top -->
+
+        <div class="header-bottom py-2">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <div class="container-fluid p-0">
+                        <a class="navbar-brand" href="index.html">Shop Logo</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Компьютеры</a>
+                                </li>
+
+
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="category.html" id="navbarDropdown"
+                                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Ноутбуки
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="category.html">Mac</a></li>
+                                        <li><a class="dropdown-item" href="category.html">Windows</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Телефоны</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="category.html">Камеры</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div> <!-- END Header-bottom -->
+
+    </header>
+
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb  bg-light p-2">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+            </ol>
+        </nav>
+    </div>
+
+    <div class="container py-3">
+        <div class="row">
+            <div class="col-md-4 order-md-2">Sidebar</div>
+            <div class="col-md-8 order-md-1">
+                <ul class="thumbnails list-unstyled clearfix">
+                    <li class="thumb-main text-center"><a class="thumbnail" href="https://via.placeholder.com/800x600"
+                            data-effect="mfp-zoom-in"><img src="https://via.placeholder.com/800x600" alt=""></a></li>
+
+                    <li class="thumb-additional"><a class="thumbnail" href="https://via.placeholder.com/800x600"
+                            data-effect="mfp-zoom-in"><img src="https://via.placeholder.com/800x600" alt=""></a></li>
+                    <li class="thumb-additional"><a class="thumbnail" href="https://via.placeholder.com/800x600"
+                            data-effect="mfp-zoom-in"><img src="https://via.placeholder.com/800x600" alt=""></a></li>
+                    <li class="thumb-additional"><a class="thumbnail" href="https://via.placeholder.com/800x600"
+                            data-effect="mfp-zoom-in"><img src="https://via.placeholder.com/800x600" alt=""></a></li>
+                    <li class="thumb-additional"><a class="thumbnail" href="https://via.placeholder.com/800x600"
+                            data-effect="mfp-zoom-in"><img src="https://via.placeholder.com/800x600" alt=""></a></li>
+                </ul>
+
+                <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#description"
+                            type="button">Описание</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link"data-bs-toggle="tab" data-bs-target="#specification"
+                            type="button">Характеристики</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="description"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet qui officiis inventore tempora necessitatibus dolore quidem veniam accusamus quod voluptates placeat repellendus corporis voluptate, earum eaque. Consequatur veritatis a qui.</p>
+                    <p>Magnam, nisi dignissimos perferendis eius libero quod doloribus molestias, optio quae fugiat tempora repudiandae amet nihil facilis nulla qui earum. Voluptatum ea cumque esse illo quasi, nemo quaerat ipsum non!</p>
+                    <p>Sapiente, minima nesciunt reprehenderit, praesentium iure tenetur corrupti veniam hic ipsam nisi exercitationem vel rem, id repellendus minus consectetur neque itaque officia quasi quisquam necessitatibus? Id tenetur voluptate obcaecati est!</p>
+                    <p>Exercitationem libero in molestias ipsum vero, quibusdam quia inventore natus error facilis fugit debitis fuga placeat dolore cumque veritatis similique sapiente earum assumenda neque quisquam, dicta nostrum et. Quaerat, adipisci.</p>
+                    <p>Voluptates animi perspiciatis omnis, provident voluptatum accusantium magnam vel magni et itaque laborum corrupti enim architecto libero at quas explicabo quis obcaecati odit. Aspernatur cupiditate iusto earum hic accusamus animi.</p>
+                    </div>
+                    <div class="tab-pane fade" id="specification">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <td colspan="2"><strong>Memory</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>test 1</td>
+                                    <td>8 gb</td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <td colspan="2"><strong>Processor</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>No. of Cores</td>
+                                    <td>1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <section class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-6">
+                        <h4>Информация</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="index.html">Главная</a></li>
+                            <li><a href="#">О магазине</a></li>
+                            <li><a href="#">Оплата и доставка</a></li>
+                            <li><a href="#">Гарантия</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <h4>Время работы</h4>
+                        <ul class="list-unstyled">
+                            <li>г. Москва, ул. Пушкина, 37</li>
+                            <li>пн-вс: 9:00 - 18:00</li>
+                            <li>без перерыва</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <h4>Контакты</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="tel:+71234567890">+7 123 456-78-90</a></li>
+                            <li><a href="tel:+71234567890">+7 123 456-78-90</a></li>
+                            <li><a href="tel:+71234567890">+7 123 456-78-90</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-3 col-6">
+                        <h4>Мы в сети</h4>
+                        <div class="footer-icons">
+                            <a href="#"><i class="bi bi-telegram"></i></a>
+                            <a href="#"><i class="bi bi-whatsapp"></i></a>
+                            <a href="#"><i class="bi bi-youtube"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </footer>
+
+
+    <button id="go-up">
+        <i class="bi bi-chevron-double-up"></i>
+    </button>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

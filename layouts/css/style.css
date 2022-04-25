@@ -248,7 +248,7 @@ li a.dropdown-item:hover {
     box-shadow: 0 14px 30px -15px rgba(0, 0, 0, 0.75);
 }
 
-.product-card .product-img {
+.product-card .product-img a{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -472,6 +472,67 @@ li a.dropdown-item:hover {
 }
 
 /* END Category page */
+
+
+/* Product page */
+
+.thumbnail {
+    display: block;
+    padding: 4px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color .5s;
+}
+
+a.thumbnail.active, a.thumbnail:focus, a.thumbnail:hover {
+    border-color: #f96;
+}
+
+.thumbnails .thumb-main a {
+    padding: 20px;
+}
+
+.thumbnails .thumb-main img {
+    max-width: 300px;
+}
+
+.thumbnails .thumb-additional {
+    float: left;
+    margin-right: 20px;
+    max-width: 100px;
+}
+
+ 
+
+/* ====== Zoom effect ====== */
+.mfp-zoom-in .mfp-with-anim {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  transform: scale(0.8);
+}
+.mfp-zoom-in.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.mfp-zoom-in.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  transform: scale(1);
+}
+.mfp-zoom-in.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mfp-zoom-in.mfp-removing .mfp-with-anim {
+  transform: scale(0.8);
+  opacity: 0;
+}
+.mfp-zoom-in.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+
+/* 
+
+/* END Product page */
 
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {

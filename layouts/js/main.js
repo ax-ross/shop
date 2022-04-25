@@ -1,15 +1,15 @@
-$(function() {
+$(function () {
 
-    $('.open-search').click(function(e) {
+    $('.open-search').click(function (e) {
         e.preventDefault();
         $('#search').addClass('active');
     });
 
-    $('.close-search').click(function() {
+    $('.close-search').click(function () {
         $('#search').removeClass('active');
     });
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
             $('#go-up').fadeIn();
         } else {
@@ -17,12 +17,28 @@ $(function() {
         }
     });
 
-    $('#go-up').click(function() {
-        $('body, html').animate({scrollTop: 0}, 500);
+    $('#go-up').click(function () {
+        $('body, html').animate({ scrollTop: 0 }, 500);
     });
 
-    $('.sidebar-toggler .btn').click(function() {
+    $('.sidebar-toggler .btn').click(function () {
         $('.sidebar-toggle').slideToggle();
+    });
+
+    $('.thumbnails').magnificPopup({
+        type: 'image',
+        delegate: 'a',
+        gallery: {
+            enabled: true
+        },
+        removalDelay: 500,
+        callbacks: {
+            beforeOpen: function () {
+                // just a hack that adds mfp-anim class to markup 
+                this.st.image.markup = this.st.image.markup.replace('mfp-figure', 'mfp-figure mfp-with-anim');
+                this.st.mainClass = this.st.el.attr('data-effect');
+            }
+        }
     });
 
 })
