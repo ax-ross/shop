@@ -7,6 +7,8 @@ Router::add('#^admin/?$#', ['controller' => 'Main', 'action' => 'index', 'admin_
 
 Router::add('#^admin/(?<controller>[a-z-]+)/?(?<action>[a-z-]+)?$#', ['admin_prefix' => 'admin']);
 
+Router::add('#^product/(?<slug>[a-z0-9-]+)/?$#', ['controller' => 'Product', 'action' => 'view']);
+
 Router::add('#^$#', ['controller' => 'Main']);
 
 Router::add('#^(?<controller>[a-z-]+)/(?<action>[a-z-]+)/?$#');
