@@ -10,7 +10,7 @@ define("CACHE", ROOT . '/tmp/cache');
 define("LOGS", ROOT . '/tmp/logs');
 define("CONFIG", ROOT . '/config');
 define("LAYOUT", "shop");
-define("PATH", "http://127.0.0.1:80");
+define("PATH", "http://127.0.0.1");
 define("ADMIN", "http://127.0.0.1:80/admin");
 define("NO_IMAGE", "uploads/no_image.jpeg");
 
