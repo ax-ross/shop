@@ -43,7 +43,7 @@
                             <span class="badge bg-danger rounded-pill count-items">0</span>
                         </a>
                         <a href=""><i class="bi bi-heart"></i></a>
-                        
+
 
                         <div class="dropdown d-inline-block">
                             <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></a>
