@@ -41,4 +41,10 @@ $(function () {
         }
     });
 
+
+    $('#languages button').on('click', function() {
+        const lang_code = $(this).data('langcode');
+        window.location = PATH + '/language/change?lang=' + lang_code;
+    });
+
 })
