@@ -45,7 +45,24 @@ class Menu
         if (!$this->menuHtml) {
             $this->data = R::getAssoc("SELECT c.*, cd.* FROM category c JOIN category_description cd ON c.id = cd.category_id WHERE cd.language_id = ?", [$this->language['id']]);
             $this->tree = $this->getTree();
+            $this->menuHtml = $this->getMenuHtml($this->tree);
+            if ($this->cache) $cache->set("{$this->cacheKey}_{$this->language['code']}", $this->menuHtml, $this->cache);
         }
+
+        $this->output();
+
+    }
+    
+    protected function output()
+    {
+        $attrs = '';
+        if (!empty($this->attrs)) {
+            foreach ($this->attrs as $k => $v) $attrs .= " $k='$v' ";
+        }
+        echo "<{$this->container} class='{$this->class}' $attrs>";
+        echo $this->prepand;
+        echo $this->menuHtml;
+        echo "</{$this->container}>";
     }
 
     protected function getTree()
@@ -59,4 +76,21 @@ class Menu
 
         return $tree;
     }
+
+    protected function getMenuHtml($tree, $tab='')
+    {
+        $str = '';
+        foreach($tree as $id => $category) {
+            $str .= $this->catToTemplate($category, $tab, $id);
+        }
+        return $str;
+    }
+
+    protected function catToTemplate($category, $tab, $id)
+    {
+        ob_start();
+        require $this->tpl;
+        return ob_get_clean();
+    }
+
 }
