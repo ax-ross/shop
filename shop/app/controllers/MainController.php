@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use axross\App;
+use axross\Language;
 use RedBeanPHP\R;
 
 class MainController extends AppController
@@ -17,6 +18,6 @@ class MainController extends AppController
         $products = $this->model->get_hits($lang, 6);
         
         $this->set(compact('slides', 'products'));
-        $this->setMeta("Главная страница", 'description', 'keywords');
+        $this->setMeta(Language::get('main_index_meta_title'), Language::get('main_index_meta_description'), Language::get('main_index_meta_keywords'));
     }
 }

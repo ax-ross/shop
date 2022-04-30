@@ -16,8 +16,8 @@ class AppController extends Controller
         new AppModel();
 
         $languages = App::$app->setProperty('languages', Language::getLanguages());
-        App::$app->setProperty('language', Language::getLanguage($languages));
-        
+        $lang = App::$app->setProperty('language', Language::getLanguage($languages));
+        \axross\Language::load($lang['code'], $this->route);
     }
 
 }

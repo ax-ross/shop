@@ -29,7 +29,7 @@
 
                         <form action="" id="search">
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search..." aria-label="Search..." name="search">
+                                <input type="text" class="form-control" placeholder="<?php et('tpl_search') ?>" aria-label="search" name="search">
                                 <button class="btn close-search" type="button"><i class="bi bi-x"></i></button>
                                 <button class="btn" type="submit"><i class="bi bi-search"></i></button>
                             </div>
@@ -48,8 +48,8 @@
                         <div class="dropdown d-inline-block">
                             <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <li><a class="dropdown-item" href="#">Авторизация</a></li>
-                                <li><a class="dropdown-item" href="#">Регистрация</a></li>
+                                <li><a class="dropdown-item" href="#"><?php et('tpl_login') ?></a></li>
+                                <li><a class="dropdown-item" href="#"><?php et('tpl_signup') ?></a></li>
                             </ul>
                         </div>
 

@@ -32,7 +32,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="section-title">Рекомендуемые товары</h3>
+                    <h3 class="section-title"><?php et('main_index_featured_products') ?></h3>
                 </div>
 
                 <?php $this->getPart('parts/products_loop', compact('products')) ?>
@@ -45,33 +45,33 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="section-title">Наши преимущества</h3>
+                <h3 class="section-title"><?php et('main_index_advantages') ?></h3>
             </div>
             <div class="col-md-3 col-sm-6">
                 <div class="advantage-item text-center">
                     <p><i class="bi bi-truck"></i></p>
-                    <p>Поставки от производителей</p>
+                    <p><?php et('main_index_fast_delivery') ?></p>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="advantage-item text-center">
                     <p><i class="bi bi-boxes"></i></p>
-                    <p>Широкий ассортимент</p>
+                    <p><?php et('main_index_wide_range') ?></p>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="advantage-item text-center">
                     <p><i class="bi bi-tags"></i></p>
-                    <p>Низкие цены</p>
+                    <p><?php et('main_index_low_prices') ?></p>
                 </div>
             </div>
 
             <div class="col-md-3 col-sm-6">
                 <div class="advantage-item text-center">
                     <p><i class="bi bi-headset"></i></p>
-                    <p>Круглосуточная поддержка</p>
+                    <p><?php et('main_index_support') ?></p>
                 </div>
             </div>
         </div>
