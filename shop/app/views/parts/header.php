@@ -71,15 +71,15 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category.html">Компьютеры</a>
+                                    <a class="nav-link" href="category.html"><?php et('tpl_computers') ?></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category.html">Планшеты</a>
+                                    <a class="nav-link" href="category.html"><?php et('tpl_tablets') ?></a>
                                 </li>
 
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="category.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Ноутбуки
+                                    <?php et('tpl_notebooks') ?>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="category.html">Mac</a></li>
@@ -88,10 +88,10 @@
                                 </li>
 
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category.html">Телефоны</a>
+                                    <a class="nav-link" href="category.html"><?php et('tpl_phones') ?></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="category.html">Камеры</a>
+                                    <a class="nav-link" href="category.html"><?php et('tpl_cameras') ?></a>
                                 </li>
 
                             </ul>

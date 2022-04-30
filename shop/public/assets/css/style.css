@@ -163,22 +163,22 @@ li a.dropdown-item:hover {
     color: #f96;
 }
 
-.modal-footer .continue-shoping {
+.modal-footer .continue-shopping {
     background-color: #f96;
     border-color: #f96;
     color: #fff;
 }
 
-.modal-footer .continue-shoping:hover {
+.modal-footer .continue-shopping:hover {
     background-color: #ffa87d;
 }
 
-.modal-footer .continue-shoping:focus,
-.modal-footer .continue-shoping.focus {
+.modal-footer .continue-shopping:focus,
+.modal-footer .continue-shopping.focus {
     box-shadow: 0 0 0 .2rem rgba(255, 153, 102, 0.5)
 }
 
-.modal-footer .continue-shoping:focus-visible {
+.modal-footer .continue-shopping:focus-visible {
     outline: #f96;
 }
 
