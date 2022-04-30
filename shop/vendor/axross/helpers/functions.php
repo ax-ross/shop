@@ -1,6 +1,7 @@
 <?php
 
 use axross\App;
+use axross\Language;
 
 function debug($data, $die = false)
 {
@@ -19,4 +20,14 @@ function redirect($http = false)
 function base_url()
 {
     return PATH . '/' . (App::$app->getProperty('lang') ? App::$app->getProperty('lang') . '/' : '');
+}
+
+function gt($key)
+{
+    Language::get($key);
+}
+
+function et($key)
+{
+    echo Language::get($key);
 }
