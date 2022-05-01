@@ -10,6 +10,7 @@ class App
     {
         $url = trim(urldecode($_SERVER['REQUEST_URI']), '/');
         new ErrorHandler;
+        session_start();
         self::$app = Registry::getInstance();
         $this->getParams();
         Router::dispatch($url);
