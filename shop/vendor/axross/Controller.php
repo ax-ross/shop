@@ -11,14 +11,16 @@ abstract class controller
     public string $view = '';
     public object $model;
 
-    public function __construct(public $route= [])
+    public function __construct(public $route = [])
     {
     }
 
     public function getModel()
     {
         $model = 'app\models\\' . $this->route['admin_prefix'] . $this->route['controller'];
-        if (class_exists($model)) $this->model = new $model;
+        if (class_exists($model)) {
+            $this->model = new $model;
+        }
     }
 
     public function getView()
@@ -32,11 +34,11 @@ abstract class controller
         $this->data = $data;
     }
 
-    public function setMeta($title='', $description='', $keywords='')
+    public function setMeta($title = '', $description = '', $keywords = '')
     {
         $this->meta = [
             'title' => $title,
-            'description'=> $description,
+            'description' => $description,
             'keywords' => $keywords
         ];
     }
@@ -45,5 +47,4 @@ abstract class controller
     {
         return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
     }
-
 }

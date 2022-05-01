@@ -33,9 +33,11 @@ class Language
     public static function getLanguage($languages)
     {
         $lang = App::$app->getProperty('lang');
-        if ($lang && array_key_exists($lang, $languages)) $key = $lang;
-        elseif (!$lang) $key = key($languages);
-        else {
+        if ($lang && array_key_exists($lang, $languages)) {
+            $key = $lang;
+        } elseif (!$lang) {
+            $key = key($languages);
+        } else {
             $lang = htmlspecialchars($lang);
             throw new \Exception("Language {$lang} not found", 404);
         }

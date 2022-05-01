@@ -15,10 +15,14 @@ class CartController extends AppController
         $id = (int)$_GET['id'];
         $amount = (int)$_GET['amount'];
         
-        if (!$id) return false;
+        if (!$id) {
+            return false;
+        }
 
         $product = $this->model->get_product($id, $lang);
-        if (!$product) return false;
+        if (!$product) {
+            return false;
+        }
 
         $this->model->add_to_cart($product, $amount);
         if ($this->isAjax()) {

@@ -33,7 +33,9 @@ class Menu
     protected function getOptions($options)
     {
         foreach($options as $k => $v) {
-            if (property_exists($this, $k)) $this->$k = $v;
+            if (property_exists($this, $k)) {
+                $this->$k = $v;
+            }
         }
     }
 
@@ -46,7 +48,9 @@ class Menu
             $this->data = R::getAssoc("SELECT c.*, cd.* FROM category c JOIN category_description cd ON c.id = cd.category_id WHERE cd.language_id = ?", [$this->language['id']]);
             $this->tree = $this->getTree();
             $this->menuHtml = $this->getMenuHtml($this->tree);
-            if ($this->cache) $cache->set("{$this->cacheKey}_{$this->language['code']}", $this->menuHtml, $this->cache);
+            if ($this->cache) {
+                $cache->set("{$this->cacheKey}_{$this->language['code']}", $this->menuHtml, $this->cache);
+            }
         }
 
         $this->output();
@@ -57,7 +61,9 @@ class Menu
     {
         $attrs = '';
         if (!empty($this->attrs)) {
-            foreach ($this->attrs as $k => $v) $attrs .= " $k='$v' ";
+            foreach ($this->attrs as $k => $v) {
+                $attrs .= " $k='$v' ";
+            }
         }
         echo "<{$this->container} class='{$this->class}' $attrs>";
         echo $this->prepand;
@@ -70,8 +76,11 @@ class Menu
         $tree = [];
         $data = $this->data;
         foreach ($data as $id => &$node) {
-            if (!$node['parent_id']) $tree[$id] = &$node;
-            else $data[$node['parent_id']]['children'][$id] = &$node;
+            if (!$node['parent_id']) {
+                $tree[$id] = &$node;
+            } else {
+                $data[$node['parent_id']]['children'][$id] = &$node;
+            }
         }
 
         return $tree;

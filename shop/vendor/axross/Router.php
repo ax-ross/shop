@@ -35,8 +35,10 @@ class Router
     public static function dispatch($url)
     {
         $url = self::removeQueryString($url);
-        if (self::matchRoute($url)){
-            if (!empty(self::$route['lang'])) App::$app->setProperty('lang', self::$route['lang']);
+        if (self::matchRoute($url)) {
+            if (!empty(self::$route['lang'])) {
+                App::$app->setProperty('lang', self::$route['lang']);
+            }
             $controller = 'app\controllers\\' . self::$route['admin_prefix'] . self::$route['controller'] . 'Controller';
             if (class_exists($controller)) {
                 $controllerObject = new $controller(self::$route);
@@ -45,10 +47,15 @@ class Router
                 if (method_exists($controllerObject, $action)) {
                     $controllerObject->$action();
                     $controllerObject->getView();
-                } else throw new \Exception("Метод {$controller}::{$action} не найден", 404);
-            } else throw new \Exception("Контроллер {$controller} не найден", 404);
-
-        } else throw new \Exception("Страница не найдена", 404);
+                } else {
+                    throw new \Exception("Метод {$controller}::{$action} не найден", 404);
+                }
+            } else {
+                throw new \Exception("Контроллер {$controller} не найден", 404);
+            }
+        } else {
+            throw new \Exception("Страница не найдена", 404);
+        }
     }
 
     public static function matchRoute($url): bool
@@ -60,13 +67,18 @@ class Router
                         $route[$k] = $v;
                     }
                 }
-                if (empty($route['action'])) $route['action'] = 'index';
+                if (empty($route['action'])) {
+                    $route['action'] = 'index';
+                }
 
-                if (!isset($route['admin_prefix'])) $route['admin_prefix'] = '';
-                else $route['admin_prefix'] .= '\\';
+                if (!isset($route['admin_prefix'])) {
+                    $route['admin_prefix'] = '';
+                } else {
+                    $route['admin_prefix'] .= '\\';
+                }
 
                 $route['controller'] = self::upperCamelCase($route['controller']);
-                
+
                 self::$route = $route;
 
                 return true;

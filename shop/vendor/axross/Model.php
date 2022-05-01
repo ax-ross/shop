@@ -15,5 +15,4 @@ abstract class model
     {
         Db::getInstance();
     }
-
 }
