@@ -5,7 +5,7 @@ use axross\Language;
 
 function debug($data, $die = false)
 {
-    echo '<pre>' . print_r($data, true) . '<pre>';
+    echo '<pre>' . print_r($data, true) . '</pre>';
     if ($die) die();
 }
 
