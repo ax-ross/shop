@@ -12,3 +12,4 @@ Router::add('#^(?<lang>[a-z]+)?/?product/(?<slug>[a-z0-9-]+)/?$#', ['controller'
 Router::add('#^(?<lang>[a-z]+)?/?$#', ['controller' => 'Main']);
 
 Router::add('#^(?<controller>[a-z-]+)/(?<action>[a-z-]+)/?$#');
+Router::add('#^(?<lang>[a-z]+)/(?<controller>[a-z-]+)/(?<action>[a-z-]+)/?$#');
