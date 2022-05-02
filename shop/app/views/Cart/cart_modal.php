@@ -5,15 +5,15 @@
                 <thead>
                 <?php if (!empty($_SESSION['cart'])) : ?>
                     <div class=" text-end">
-                    <button type="button" class="btn empty-trash"><?php et('tpl_empty_trash') ?></button>
+                    <button type="button" class="btn empty-trash"><?php et('tpl_cart_empty_trash') ?></button>
                     </div>
                 
             <?php endif; ?>
                     <tr>
-                        <th scope="col"><?php et('tpl_photo') ?></th>
-                        <th scope="col"><?php et('tpl_product') ?></th>
-                        <th scope="col"><?php et('tpl_amount') ?></th>
-                        <th scope="col"><?php et('tpl_price') ?></th>
+                        <th scope="col"><?php et('tpl_cart_photo') ?></th>
+                        <th scope="col"><?php et('tpl_cart_product') ?></th>
+                        <th scope="col"><?php et('tpl_cart_amount') ?></th>
+                        <th scope="col"><?php et('tpl_cart_price') ?></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,6 +36,6 @@
     <button type="button" class="btn continue-shopping" data-bs-dismiss="modal"><?php et('tpl_continue_shopping') ?></button>
 
     <?php if (!empty($_SESSION['cart'])) : ?>
-        <button type="button" class="btn checkout"><?php et('tpl_checkout') ?></button>
+        <button type="button" class="btn checkout"><?php et('tpl_cart_checkout') ?></button>
     <?php endif; ?>
 </div>
