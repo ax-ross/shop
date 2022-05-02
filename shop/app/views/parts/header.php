@@ -38,9 +38,9 @@
                         <a href="" class="open-search"><i class="bi bi-search"></i></a>
 
                         <!-- Button trigger modal -->
-                        <a href="" data-bs-toggle="modal" data-bs-target="#cart-modal" class="open-cart-modal">
+                        <a href="" data-bs-toggle="modal" data-bs-target="#cart-modal" class="open-cart-modal" id="get-cart">
                             <i class="bi bi-cart"></i>
-                            <span class="badge bg-danger rounded-pill count-items">0</span>
+                            <span class="badge bg-danger rounded-pill count-items"><?= $_SESSION['cart.amount'] ?? 0 ?></span>
                         </a>
                         <a href=""><i class="bi bi-heart"></i></a>
 
@@ -73,32 +73,6 @@
                                 'class' => "navbar-nav ms-auto mb-2 mb-lg-0",
                                 'cache' => 30
                             ]); ?>
-                            <!-- <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="category.html"><?php et('tpl_computers') ?></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="category.html"><?php et('tpl_tablets') ?></a>
-                                </li>
-
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="category.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <?php et('tpl_notebooks') ?>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="category.html">Mac</a></li>
-                                        <li><a class="dropdown-item" href="category.html">Windows</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="category.html"><?php et('tpl_phones') ?></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="category.html"><?php et('tpl_cameras') ?></a>
-                                </li>
-
-                            </ul> -->
                         </div>
                     </div>
                 </nav>

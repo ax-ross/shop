@@ -221,6 +221,10 @@ li a.dropdown-item:hover {
     outline: #f96;
 }
 
+.cart-table img {
+    max-height: 50px;
+}
+
 /* END Header top */
 
 /* Header bottom */
