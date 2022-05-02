@@ -3,12 +3,12 @@
         <div class="table-responsive cart-table">
             <table class="table text-start">
                 <thead>
-                <?php if (!empty($_SESSION['cart'])) : ?>
-                    <div class=" text-end">
-                    <button type="button" class="btn empty-trash"><?php et('tpl_cart_clear') ?></button>
-                    </div>
-                
-            <?php endif; ?>
+                    <?php if (!empty($_SESSION['cart'])) : ?>
+                        <div class=" text-end">
+                            <button type="button" class="btn empty-trash" id="clear-cart"><?php et('tpl_cart_clear') ?></button>
+                        </div>
+
+                    <?php endif; ?>
                     <tr>
                         <th scope="col"><?php et('tpl_cart_photo') ?></th>
                         <th scope="col"><?php et('tpl_cart_product') ?></th>
@@ -24,21 +24,22 @@
                             <td><a href="product/<?= $item['slug'] ?>"><?= $item['title'] ?></a></td>
                             <td><?= $item['amount'] ?></td>
                             <td><?= $item['price'] ?> &#x20bd;</td>
-                            <td><a href="cart/delete?id=<?= $id ?>" class="del-item"><i class="bi bi-trash"></i></a></td>
+                            <td><a href="cart/delete?id=<?= $id ?>" class="del-item" data-id="<?= $id ?>"><i class="bi bi-trash"></i></a></td>
                         </tr>
                     <?php endforeach; ?>
-                <tr>
-                    <td colspan="4" class="text-end"><?php et('tpl_cart_total_amount') ?></td>
-                    <td class="cart-amount"><?= $_SESSION['cart.amount'] ?></td>
-                </tr><tr>
-                    <td colspan="4" class="text-end"><?php et('tpl_cart_sum') ?></td>
-                    <td class="cart-sum"><?= $_SESSION['cart.sum'] ?> &#x20bd;</td>
-                </tr>
+                    <tr>
+                        <td colspan="4" class="text-end"><?php et('tpl_cart_total_amount') ?></td>
+                        <td class="cart-amount"><?= $_SESSION['cart.amount'] ?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" class="text-end"><?php et('tpl_cart_sum') ?></td>
+                        <td class="cart-sum"><?= $_SESSION['cart.sum'] ?> &#x20bd;</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     <?php else : ?>
-        <h4 class="text-start">Empty Cart</h4>
+        <h4 class="text-start"><?php et('tpl_cart_empty'); ?></h4>
     <?php endif; ?>
 </div>
 <div class="modal-footer">

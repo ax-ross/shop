@@ -26,7 +26,7 @@
         </div>
     </div>
 <?php endif; ?>
-<?php debug($_SESSION); ?>
+
 <?php if (!empty($products)) : ?>
     <section class="recomended-products">
         <div class="container">
