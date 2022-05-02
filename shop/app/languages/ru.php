@@ -16,6 +16,7 @@ return [
     'tpl_price' => 'Цена',
     'tpl_continue_shopping' => 'Продолжить покупки',
     'tpl_checkout' => 'Оформить заказ',
+    'tpl_empty_trash' => 'Очистить корзину',
     'tpl_info' => "Информация",
     'tpl_homepage' => "Главная",
     'tpl_about_shop' => "О магазине",

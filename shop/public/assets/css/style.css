@@ -201,6 +201,26 @@ li a.dropdown-item:hover {
     outline: #f96;
 }
 
+.empty-trash {
+    background-color: #f96;
+    border-color: #f96;
+    color: #fff;
+}
+
+.empty-trash:hover {
+    background-color: #ffa87d;
+    color: #fff;
+}
+
+.empty-trash:focus,
+.empty-trash.focus {
+    box-shadow: 0 0 0 .2rem rgba(255, 153, 102, 0.5)
+}
+
+.empty-trash:focus-visible {
+    outline: #f96;
+}
+
 /* END Header top */
 
 /* Header bottom */

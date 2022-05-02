@@ -16,6 +16,7 @@ return [
     'tpl_price' => 'Price',
     'tpl_continue_shopping' => 'Сontinue shopping',
     'tpl_checkout' => 'Сheckout',
+    'tpl_empty_trash' => 'Empty trash',
     'tpl_info' => "Information",
     'tpl_homepage' => "Home page",
     'tpl_about_shop' => "About shop",

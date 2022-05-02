@@ -57,43 +57,8 @@
                 <h5 class="modal-title" id="cart-modal"><?php et('tpl_cart') ?></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <table class="table text-start">
-                    <thead>
-                        <tr>
-                            <th scope="col"><?php et('tpl_photo') ?></th>
-                            <th scope="col"><?php et('tpl_product') ?></th>
-                            <th scope="col"><?php et('tpl_amount') ?></th>
-                            <th scope="col"><?php et('tpl_price') ?></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><a href=""><img src="https://via.placeholder.com/400x300" alt=""></a></td>
-                            <td><a href="">Name 1</a></td>
-                            <td>1</td>
-                            <td>100 &#x20bd;</td>
-                        </tr>
-                        <tr>
-                            <td><a href=""><img src="https://via.placeholder.com/300x400" alt=""></a></td>
-                            <td><a href="">Name 2</a></td>
-                            </td>
-                            <td>1</td>
-                            <td>100 &#x20bd;</td>
-                        </tr>
-                        <tr>
-                            <td><a href=""><img src="https://via.placeholder.com/400x400" alt=""></a></td>
-                            <td><a href="">Name 3</a></td>
-                            </td>
-                            <td>1</td>
-                            <td>100 &#x20bd;</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn continue-shopping" data-bs-dismiss="modal"><?php et('tpl_continue_shopping') ?></button>
-                <button type="button" class="btn checkout"><?php et('tpl_checkout') ?></button>
+            <div class="modal-cart-content">
+                
             </div>
         </div>
     </div>
