@@ -53,7 +53,7 @@ $(function () {
             type: 'GET',
             success: function (res) {
                 showCart(res);
-                $('.add-to-cart').find('i').removeClass('bi-cart-check-fill').addClass('bi-cart');
+                $('.add-to-cart i').removeClass('bi-cart-check-fill').addClass('bi-cart');
             },
             error: function () {
                 alert('Error!');
