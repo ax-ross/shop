@@ -15,7 +15,7 @@
                         <?= $product['price'] ?>&#x20bd;
                     </div>
                     <div class="product-links">
-                        <a class="add-to-cart" href="cart/add?id=<?= $product['id'] ?>" data-id="<?= $product['id'] ?>"><i class="bi bi-cart" ></i></a>
+                        <a id="product-<?= $product['id'] ?>" class="add-to-cart" href="cart/add?id=<?= $product['id'] ?>" data-id="<?= $product['id'] ?>"><?= get_cart_icon($product['id']) ?></a>
                         <a href="#"><i class="bi bi-heart"></i></a>
                     </div>
                 </div>

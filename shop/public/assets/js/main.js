@@ -39,6 +39,7 @@ $(function () {
             data: {id: id},
             success: function (res) {
                 showCart(res);
+                $('#product-' + id).find('i').removeClass('bi-cart-check-fill').addClass('bi-cart');
             },
             error: function () {
                 alert('Error!');
@@ -52,6 +53,7 @@ $(function () {
             type: 'GET',
             success: function (res) {
                 showCart(res);
+                $('.add-to-cart').find('i').removeClass('bi-cart-check-fill').addClass('bi-cart');
             },
             error: function () {
                 alert('Error!');
@@ -65,13 +67,13 @@ $(function () {
         const id = $(this).data('id');
         const amount = $('#input-quantity').val() ? $('#input-quantity').val() : 1;
         const obj = $(this);
-
         $.ajax({
             url: 'cart/add',
             type: 'GET',
             data: {id: id, amount: amount},
             success: function (res) {
                 showCart(res);
+                obj.find('i').removeClass('bi-cart').addClass('bi-cart-check-fill');
             },
             error: function () {
                 alert('Error!');
