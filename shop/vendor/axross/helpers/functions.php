@@ -29,7 +29,7 @@ function base_url()
 
 function gt($key)
 {
-    Language::get($key);
+    return Language::get($key);
 }
 
 function et($key)
