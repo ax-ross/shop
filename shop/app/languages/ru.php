@@ -23,6 +23,7 @@ return [
     'tpl_cart_clear' => 'Очистить корзину',
     'tpl_cart_empty' => 'Корзина пуста',
 
+    'tpl_home_breadcrumbs' => '<i class="bi bi-house-door-fill"></i>',
 
     'tpl_info' => "Информация",
     'tpl_homepage' => "Главная",

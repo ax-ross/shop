@@ -22,6 +22,7 @@ return [
     'tpl_cart_clear' => 'Clear cart',
     'tpl_cart_empty' => 'Cart is empty',
 
+    'tpl_home_breadcrumbs' => '<i class="bi bi-house-door-fill"></i>',
 
     'tpl_info' => "Information",
     'tpl_homepage' => "Home page",
