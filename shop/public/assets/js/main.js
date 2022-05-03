@@ -65,7 +65,7 @@ $(function () {
     $('.add-to-cart').on('click', function (e) {
         e.preventDefault();
         const id = $(this).data('id');
-        const amount = $('#input-quantity').val() ? $('#input-quantity').val() : 1;
+        const amount = $('#input-amount').val() ? $('#input-amount').val() : 1;
         const obj = $(this);
         $.ajax({
             url: 'cart/add',
