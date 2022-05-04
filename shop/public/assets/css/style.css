@@ -623,6 +623,37 @@ btn-buy:focus-visible {
 
 /* END Product page */
 
+/* 404 Page */
+.page-wrap {
+    min-height: 100vh;
+}
+
+.not-found {
+    color: #f96;
+    text-transform: uppercase;
+}
+.btn-404-home {
+    color: #f96;
+    border-color: #f96;
+}
+
+.not-found .btn-404-home:hover {
+    background-color: #ffa87d;
+    color: #fff ;
+}
+
+.not-found .btn-404-home:focus,
+.not-found .btn-404-home.focus {
+    box-shadow: 0 0 0 .2rem rgba(255, 153, 102, 0.5)
+}
+
+.not-found .btn-404-home:focus-visible {
+    outline: #f96;
+}
+
+
+/* End 404 Page */
+
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {
