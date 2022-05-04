@@ -56,4 +56,12 @@ abstract class controller
         die;
     }
 
+    public function error_404($folder = 'Error', $view = 404, $response = 404)
+    {
+        http_response_code($response);
+        $this->setMeta(gt('tpl_error_404_title'));
+        $this->route['controller'] = $folder;
+        $this->view = $view;
+    }
+
 }

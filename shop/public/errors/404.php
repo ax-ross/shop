@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?= PATH ?>/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= PATH ?>/assets/css/style.css">
-    <title>404 Page Not Found</title>
 </head>
 
 
@@ -16,8 +15,8 @@
         <div class="row justify-content-center">
             <div class="col-md-12 text-center not-found">
                 <span class="display-1 d-block">404</span>
-                <div class="mb-4 lead">page not found</div>
-                <a href="<?= PATH ?>"><button type="button" class="btn btn-404-home">Back to Home</button></a>
+                <div class="mb-4 lead"><?php et('tpl_error_404_text') ?></div>
+                <a href="<?= PATH ?>"><button type="button" class="btn btn-404-home"><?php et('tpl_error_404_go_home') ?></button></a>
             </div>
         </div>
     </div>

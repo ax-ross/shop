@@ -35,4 +35,9 @@ return [
     'tpl_nonstop' => 'Non-stop',
     'tpl_contacts' => 'Contacts',
     'tpl_we_are_online' => 'We are online',
+
+    'tpl_error_404_title' => '404 - Page Not Found',
+    'tpl_error_404_text' => 'Page Not Found',
+    'tpl_error_404_go_home' => 'Back to Home',
+
 ];

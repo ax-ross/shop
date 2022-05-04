@@ -36,4 +36,8 @@ return [
     'tpl_nonstop' => 'без перерыва',
     'tpl_contacts' => 'Контакты',
     'tpl_we_are_online' => 'Мы в сети',
+
+    'tpl_error_404_title' => '404 - Страница не найдена',
+    'tpl_error_404_text' => 'Странциа не найдена',
+    'tpl_error_404_go_home' => 'На Главную',
 ];
