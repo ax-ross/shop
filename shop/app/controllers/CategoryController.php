@@ -26,7 +26,8 @@ class CategoryController extends AppController
         $child_ids = !$child_ids ? $category['id'] : $child_ids . $category['id'];
         var_dump($child_ids);
         $products = $this->model->get_products($child_ids, $lang);
-        debug($products);
+        $this->setMeta($category['title'], $category['description'], $category['keywords']);
+        $this->set(compact('products', 'category', 'breadcrumbs'));
     }
 
 }

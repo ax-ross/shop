@@ -460,20 +460,6 @@ li a.dropdown-item:hover {
 /* END Go-up button */
 
 /* Category page */
-
-.sidebar-toggler .btn {
-    width: 100%;
-}
-
-.sidebar-toggle {
-    display: none;
-}
-
-.sidebar .list-group-item.active {
-    background-color: #f96;
-    border-color: #f96;
-}
-
 .page-link {
     color: #f96;
 }
@@ -668,13 +654,6 @@ btn-buy:focus-visible {
         margin-top: 0;
     }
 
-    .sidebar-toggler {
-        display: none;
-    }
-
-    .sidebar-toggle {
-        display: block !important;
-    }
 }
 
 /* ============ desktop view .end// ============ */
