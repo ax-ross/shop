@@ -31,11 +31,10 @@ class CategoryController extends AppController
         $total = $this->model->get_count_products($child_ids);
         $pagination = new Pagination($page, $perpage, $total);
         $start = $pagination->getStart();
-        echo $pagination;
 
-        $products = $this->model->get_products($child_ids, $lang);
+        $products = $this->model->get_products($child_ids, $lang, $start, $perpage);
         $this->setMeta($category['title'], $category['description'], $category['keywords']);
-        $this->set(compact('products', 'category', 'breadcrumbs'));
+        $this->set(compact('products', 'category', 'breadcrumbs', 'total', 'pagination'));
     }
 
 }

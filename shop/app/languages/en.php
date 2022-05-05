@@ -40,4 +40,6 @@ return [
     'tpl_error_404_text' => 'Page Not Found',
     'tpl_error_404_go_home' => 'Back to Home',
 
+    'tpl_total_pagination' => 'product(s) from',
+
 ];

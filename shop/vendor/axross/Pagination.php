@@ -35,22 +35,22 @@ class Pagination
 
         // $back
         if ($this->currentPage > 1) {
-            $back = "<li class='page-item'><a class='page-link' href='" . $this->getLink($this->currentPage - 1) . "'>&lt;</a></li>";
+            $back = "<li class='page-item'><a class='page-link' href='" . $this->getLink($this->currentPage - 1) . "'><i class=\"bi bi-chevron-left\"></i></a></li>";
         }
 
         // $forward
         if ($this->currentPage < $this->countPages) {
-            $forward = "<li class='page-item'><a class='page-link' href='" . $this->getLink($this->currentPage + 1) . "'>&gt;</a></li>";
+            $forward = "<li class='page-item'><a class='page-link' href='" . $this->getLink($this->currentPage + 1) . "'><i class=\"bi bi-chevron-right\"></i></a></li>";
         }
 
         // $startpage
         if ($this->currentPage > 3) {
-            $startpage = "<li class='page-item'><a class='page-link' href='" . $this->getLink(1) . "'>&laquo;</a></li>";
+            $startpage = "<li class='page-item'><a class='page-link' href='" . $this->getLink(1) . "'><i class=\"bi bi-chevron-double-left\"></i></a></li>";
         }
 
         // $endpage
         if ($this->currentPage < ($this->countPages - 2)) {
-            $endpage = "<li class='page-item'><a class='page-link' href='" . $this->getLink($this->countPages) . "'>&raquo;</a></li>";
+            $endpage = "<li class='page-item'><a class='page-link' href='" . $this->getLink($this->countPages) . "'><i class=\"bi bi-chevron-double-right\"></i></a></li>";
         }
 
         // $page2left

@@ -507,6 +507,12 @@ ul.pagination li a:focus-visible {
     outline: none;
 }
 
+.page-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
 /* Product page */
 
 .thumbnail {

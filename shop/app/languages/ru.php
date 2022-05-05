@@ -40,4 +40,6 @@ return [
     'tpl_error_404_title' => '404 - Страница не найдена',
     'tpl_error_404_text' => 'Странциа не найдена',
     'tpl_error_404_go_home' => 'На Главную',
+
+    'tpl_total_pagination' => 'товара(ов) из',
 ];
