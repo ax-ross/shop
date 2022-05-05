@@ -17,36 +17,28 @@
                     <div class="category-desc">
                         <?= $category['content'] ?>;
                     </div>
+                    <hr>
                 <?php endif; ?>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="input-group mb-3">
-                            <label class="input-group-text" for="input-sort">Сортировка:</label>
-                            <select class="form-select" id="input-sort">
-                                <option selected>По умолчанию</option>
-                                <option value="1">Название (А - Я)</option>
-                                <option value="2">Название (Я - А)</option>
-                                <option value="3">Цена (низкая > высокая)</option>
-                                <option value="3">Цена (высокая < низкая)</option>
-                            </select>
+
+                <?php if ($pagination->countPages > 1 || count($products) > 1) : ?>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text" for="input-sort"><?php et('category_view_sort'); ?></label>
+                                <select class="form-select" id="input-sort">
+                                    <option selected><?php et('category_view_sort_by_default'); ?></option>
+
+                                    <option value="sort=title_asc" <?php if (isset($_GET['sort']) && $_GET['sort'] == 'title_asc') echo 'selected' ?> ><?php et('category_view_sort_title_asc'); ?></option>
+
+
+                                    <option value="sort=title_desc" <?php if (isset($_GET['sort']) && $_GET['sort'] == 'title_desc') echo 'selected' ?>><?php et('category_view_sort_title_desc'); ?></option>
+                                    <option value="sort=price_asc" <?php if (isset($_GET['sort']) && $_GET['sort'] == 'price_asc') echo 'selected' ?>><?php et('category_view_sort_price_asc'); ?></option>
+                                    <option value="sort=price_desc" <?php if (isset($_GET['sort']) && $_GET['sort'] == 'price_desc') echo 'selected' ?>><?php et('category_view_sort_price_desc'); ?></option>
+                                </select>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="col-sm-6">
-                        <div class="input-group mb-3">
-                            <label class="input-group-text" for="input-show">Показать:</label>
-                            <select class="form-select" id="input-show">
-                                <option selected>По умолчанию</option>
-                                <option value="1">15</option>
-                                <option value="2">25</option>
-                                <option value="3">50</option>
-                                <option value="3">75</option>
-                                <option value="3">100</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
+                <?php endif; ?>
                 <div class="row">
                     <?php if (!empty($products)) : ?>
                         <?php $this->getPart('parts/products_loop', compact('products')); ?>
@@ -56,7 +48,7 @@
                             <div class="col-md-12">
                                 <p><?= count($products); ?> <?php et('tpl_total_pagination') ?> <?= $total ?></p>
 
-                                <?php if ($pagination->countPages > 1): ?>
+                                <?php if ($pagination->countPages > 1) : ?>
                                     <?= $pagination ?>
                                 <?php endif; ?>
                             </div>
