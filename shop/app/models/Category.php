@@ -37,7 +37,7 @@ class Category extends AppModel
 
     public function get_count_products($child_ids): int
     {
-        return R::count('product', "category_id IN ($child_ids)");
+        return R::count('product', "category_id IN ($child_ids) AND status = 1");
     }
 
 }
