@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'admin_email' => 'admin@new-shop.loc',
+    'admin_email' => 'admin@shop.loc',
     'site_name' => 'Shop',
-    'pagination' => 15
+    'pagination' => 3
 ];
