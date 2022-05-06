@@ -43,7 +43,7 @@ return [
 
     'tpl_total_pagination' => 'товара(ов) из',
 
-    'tpl_wishlist_add_succes' => 'Товар добавлен в избранное',
+    'tpl_wishlist_add_success' => 'Товар добавлен в избранное',
     'tpl_wishlist_add_error' => 'Ошибка доавбления товара в избранное',
     'tpl_wishlist_delete_success' => 'Товар удалён из избранного',
     'tpl_wishlist_delete_error' => 'Ошибка удаления товара из избранного',
