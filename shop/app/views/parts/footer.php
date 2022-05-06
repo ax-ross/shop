@@ -74,6 +74,7 @@
 <script src="<?= PATH ?>/assets/js/bootstrap.bundle.min.js"></script>
 <script src="<?= PATH ?>/assets/js/jquery-3.6.0.min.js"></script>
 <script src="<?= PATH ?>/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="<?= PATH ?>/assets/js/sweetalert2.js"></script>
 <script src="<?= PATH ?>/assets/js/main.js"></script>
 
 <?php $this->getDbLogs() ?>

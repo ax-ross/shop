@@ -144,7 +144,13 @@ $(function () {
             data: {id: id},
             success: function (res) {
                 res = JSON.parse(res);
-                console.log(res);
+                Swal.fire(
+                    res.text,
+                    '',
+                    res.result
+                );
+                obj.removeClass('add-to-wishlist').addClass('delete-from-wishlist');
+                obj.find('i').removeClass('bi-heart').addClass('bi-heart-fill');
             },
             error: function () {
                 alert('Error!')

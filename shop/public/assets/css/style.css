@@ -652,6 +652,19 @@ btn-buy:focus-visible {
 
 /* End 404 Page */
 
+.swal2-styled {
+    background-color: #f96 !important;
+}
+
+.swal2-styled:focus {
+    box-shadow: 0 0 0 3px rgba(255, 153, 102, 0.5) !important;
+}
+
+.swal2-styled:focus-visible {
+    outline: none !important;
+}
+
+
 /* ============ desktop view ============ */
 @media all and (min-width: 992px) {
     .navbar .nav-item .dropdown-menu {

@@ -16,7 +16,11 @@
                     </div>
                     <div class="product-links">
                         <a id="product-<?= $product['id'] ?>" class="add-to-cart" href="cart/add?id=<?= $product['id'] ?>" data-id="<?= $product['id'] ?>"><?= get_cart_icon($product['id']) ?></a>
-                        <a class="add-to-wishlist" href="wishlist/add?id=<?= $product['id'] ?>" data-id="<?= $product['id']?>"><i class="bi bi-heart"></i></a>
+                        <?php if (in_array($product['id'], \axross\App::$app->getProperty('wishlist'))) : ?>
+                            <a class="delete-from-wishlist" href="wishlist/delete?id=<?= $product['id'] ?>" data-id="<?= $product['id'] ?>"><i class="bi bi-heart-fill"></i></a>
+                        <?php else : ?>
+                            <a class="add-to-wishlist" href="wishlist/add?id=<?= $product['id'] ?>" data-id="<?= $product['id'] ?>"><i class="bi bi-heart"></i></a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

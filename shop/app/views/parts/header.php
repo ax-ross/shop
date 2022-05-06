@@ -42,7 +42,7 @@
                             <i class="bi bi-cart"></i>
                             <span class="badge bg-danger rounded-pill count-items"><?= $_SESSION['cart.amount'] ?? 0 ?></span>
                         </a>
-                        <a href=""><i class="bi bi-heart"></i></a>
+                        <a href="wishlist"><i class="bi bi-heart"></i></a>
 
 
                         <div class="dropdown d-inline-block">
