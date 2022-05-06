@@ -149,8 +149,41 @@ $(function () {
                     '',
                     res.result
                 );
-                obj.removeClass('add-to-wishlist').addClass('delete-from-wishlist');
-                obj.find('i').removeClass('bi-heart').addClass('bi-heart-fill');
+                if (res.result == 'success'){
+                    obj.removeClass('add-to-wishlist').addClass('delete-from-wishlist');
+                    obj.find('i').removeClass('bi-heart').addClass('bi-heart-fill');
+                }
+            },
+            error: function () {
+                alert('Error!')
+            }
+        });
+    });
+
+    $('.product-card').on('click', '.delete-from-wishlist', function (e) {
+        e.preventDefault();
+        const id = $(this).data('id');
+        const obj = $(this);
+        $.ajax({
+            url: 'wishlist/delete',
+            type: 'GET',
+            data: {id: id},
+            success: function (res) {
+                const url = window.location.toString();
+                if (url.indexOf('wishlist') !== -1) {
+                    window.location = url;
+                } else {
+                    res = JSON.parse(res);
+                    Swal.fire(
+                        res.text,
+                        '',
+                        res.result
+                    );
+                    if (res.result == 'success'){
+                        obj.removeClass('delete-from-wishlist').addClass('add-to-wishlist');
+                        obj.find('i').removeClass('bi-heart-fill').addClass('bi-heart');
+                    }
+                }
             },
             error: function () {
                 alert('Error!')
