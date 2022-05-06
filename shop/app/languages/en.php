@@ -42,4 +42,9 @@ return [
 
     'tpl_total_pagination' => 'product(s) from',
 
+    'tpl_wishlist_add_success' => 'Product added to favorites',
+    'tpl_wishlist_add_error' => 'Error adding product to favorites',
+    'tpl_wishlist_delete_success' => 'Product removed from favorites',
+    'tpl_wishlist_delete_error' => 'Error removing a product from favorites',
+
 ];

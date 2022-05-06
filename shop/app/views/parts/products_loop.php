@@ -16,7 +16,7 @@
                     </div>
                     <div class="product-links">
                         <a id="product-<?= $product['id'] ?>" class="add-to-cart" href="cart/add?id=<?= $product['id'] ?>" data-id="<?= $product['id'] ?>"><?= get_cart_icon($product['id']) ?></a>
-                        <a href="#"><i class="bi bi-heart"></i></a>
+                        <a class="add-to-wishlist" href="wishlist/add?id=<?= $product['id'] ?>" data-id="<?= $product['id']?>"><i class="bi bi-heart"></i></a>
                     </div>
                 </div>
             </div>
