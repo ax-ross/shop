@@ -27,9 +27,6 @@ return [
 
     'tpl_info' => "Информация",
     'tpl_homepage' => "Главная",
-    'tpl_about_shop' => "О магазине",
-    'tpl_payment_and_delivery' => "Оплата и доставка",
-    'tpl_warranty' => "Гарантия",
     'tpl_opening_hours' => 'Время работы',
     'tpl_adress' => 'г. Москва, ул. Пушкина, 37',
     'tpl_schedule' => 'пн-вс: 9:00 - 18:00',

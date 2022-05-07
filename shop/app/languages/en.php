@@ -26,9 +26,6 @@ return [
 
     'tpl_info' => "Information",
     'tpl_homepage' => "Home page",
-    'tpl_about_shop' => "About shop",
-    'tpl_payment_and_delivery' => "Paymant and delivery",
-    'tpl_warranty' => "Warranty",
     'tpl_opening_hours' => 'Opening hours',
     'tpl_adress' => 'Moscow, st. Pushkin, 37',
     'tpl_schedule' => 'Mon-Sun: 9:00-18:00',

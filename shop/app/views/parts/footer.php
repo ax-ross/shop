@@ -4,12 +4,20 @@
             <div class="row">
                 <div class="col-md-3 col-6">
                     <h4><?php et('tpl_info') ?></h4>
-                    <ul class="list-unstyled">
+
+                    <?php new \app\widgets\page\Page([
+                        'cache' => 0,
+                        'class' => 'list-unstyled',
+                        'prepend' => '<li><a href="' . base_url() . '">' . gt('tpl_homepage') . '</a></li>',
+                    ]); ?>
+                    <!-- <ul class="list-unstyled">
                         <li><a href="index.html"><?php et('tpl_homepage') ?></a></li>
                         <li><a href="#"><?php et('tpl_about_shop') ?></a></li>
                         <li><a href="#"><?php et('tpl_payment_and_delivery') ?></a></li>
                         <li><a href="#"><?php et('tpl_warranty') ?></a></li>
-                    </ul>
+                    </ul> -->
+
+
                 </div>
 
                 <div class="col-md-3 col-6">
