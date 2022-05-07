@@ -12,6 +12,7 @@ Router::add('#^(?<lang>[a-z]+)?/?product/(?<slug>[a-z0-9-]+)/?$#', ['controller'
 Router::add('#^(?<lang>[a-z]+)?/?category/(?<slug>[a-z0-9-]+)/?$#', ['controller' => 'Category', 'action' => 'view']);
 Router::add('#^(?<lang>[a-z]+)?/?search/?$#', ['controller' => 'Search', 'action' => 'index']);
 Router::add('#^(?<lang>[a-z]+)?/?wishlist/?$#', ['controller' => 'Wishlist', 'action' => 'index']);
+Router::add('#^(?<lang>[a-z]+)?/?page/(?<slug>[a-z0-9-]+)/?$#', ['controller' => 'Page', 'action' => 'view']);
 
 Router::add('#^(?<lang>[a-z]+)?/?$#', ['controller' => 'Main']);
 
