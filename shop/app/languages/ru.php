@@ -4,11 +4,13 @@ return [
     'tpl_search' => 'Поиск...',
     'tpl_login' => 'Авторизация',
     'tpl_signup' => 'Регистрация',
-    // 'tpl_computers' => 'Компьютеры',
-    // 'tpl_tablets' => 'Планшеты',
-    // 'tpl_notebooks' => 'Ноутбуки',
-    // 'tpl_phones' => 'Телефоны',
-    // 'tpl_cameras' => 'Камеры',
+    'tpl_logoug' => 'Выход',
+    'tpl_personal_area' => 'Личный кабинет',
+    
+    'tpl_signup_email_input' => 'E-mail',
+    'tpl_signup_password_input' => 'Пароль',
+    'tpl_signup_name_input' => 'Имя',
+    'tpl_signup_address_input' => 'Адрес',
 
 
     'tpl_cart_title' => 'Корзина',
