@@ -36,8 +36,8 @@
 
                 <div class="col-md-6 offset-md-3">
                     <div class="form-floating mb-3">
-                        <input type="text" name="adress" class="form-control" id="adress" placeholder="Adress">
-                        <label class="required" for="adress"><?php et('tpl_signup_address_input'); ?></label>
+                        <input type="text" name="address" class="form-control" id="address" placeholder="Address">
+                        <label class="required" for="address"><?php et('tpl_signup_address_input'); ?></label>
                     </div>
                 </div>
 
