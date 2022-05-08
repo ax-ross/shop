@@ -49,11 +49,11 @@
                             <a href="" class="dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-person"></i></a>
                             <ul class="dropdown-menu">
                                 <?php if (empty($_SESSION['user'])) : ?>
-                                    <li><a class="dropdown-item" href="#"><?php et('tpl_login') ?></a></li>
-                                    <li><a class="dropdown-item" href="#"><?php et('tpl_signup') ?></a></li>
+                                    <li><a class="dropdown-item" href="user/login"><?php et('tpl_login') ?></a></li>
+                                    <li><a class="dropdown-item" href="user/signup"><?php et('tpl_signup') ?></a></li>
                                 <?php else : ?>
-                                    <li><a class="dropdown-item" href="#"><?php et('tpl_personal_area') ?></a></li>
-                                    <li><a class="dropdown-item" href="#"><?php et('tpl_logout') ?></a></li>
+                                    <li><a class="dropdown-item" href="user/area"><?php et('tpl_personal_area') ?></a></li>
+                                    <li><a class="dropdown-item" href="user/logout"><?php et('tpl_logout') ?></a></li>
                                 <?php endif; ?>
                             </ul>
                         </div>
