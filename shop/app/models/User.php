@@ -3,6 +3,7 @@
 
 namespace app\models;
 
+use RedBeanPHP\R;
 
 class User extends AppModel
 {
@@ -35,6 +36,14 @@ class User extends AppModel
     }
 
 
-
+    public function checkUnique($text_error = '')
+    {
+        $user = R::findOne('user', 'email = ?', [$this->attributes['email']]);
+        if ($user) {
+            $this->errors['unique'][] = $text_error ?: gt('user_signup_error_email_unique');
+            return false;
+        }
+        return true;
+    }
 
 }

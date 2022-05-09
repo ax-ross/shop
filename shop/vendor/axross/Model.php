@@ -2,6 +2,7 @@
 
 namespace axross;
 
+use RedBeanPHP\R;
 use Valitron\Validator;
 
 abstract class model
@@ -31,7 +32,7 @@ abstract class model
     {
         Validator::langDir(APP . '/languages/validator/lang');
         Validator::lang($lang['code']);
-        $validator = new Validator($data);        
+        $validator = new Validator($data);
         $validator->rules($this->rules);
         $validator->labels($this->getLabels());
         if ($validator->validate()) {
@@ -66,4 +67,14 @@ abstract class model
     }
 
 
+    public function save($table)
+    {
+        $table = R::dispense($table);
+        foreach ($this->attributes as $name => $value) {
+            if ($value) {
+                $table->$name = $value;
+            }
+        }
+        return R::store($table);
+    }
 }
