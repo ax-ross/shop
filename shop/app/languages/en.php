@@ -4,7 +4,7 @@ return [
     'tpl_search' => 'Search...',
     'tpl_login' => 'Log in',
     'tpl_signup' => 'Sign up',
-    'tpl_logoug' => 'Log out',
+    'tpl_logout' => 'Log out',
     'tpl_personal_area' => 'Personal Area',
     
     'tpl_signup_btn' => 'Register',

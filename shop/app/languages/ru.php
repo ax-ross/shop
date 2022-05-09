@@ -4,7 +4,7 @@ return [
     'tpl_search' => 'Поиск...',
     'tpl_login' => 'Авторизация',
     'tpl_signup' => 'Регистрация',
-    'tpl_logoug' => 'Выход',
+    'tpl_logout' => 'Выход',
     'tpl_personal_area' => 'Личный кабинет',
     
     'tpl_signup_email_input' => 'E-mail',
