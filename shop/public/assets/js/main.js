@@ -38,7 +38,12 @@ $(function () {
             type: 'GET',
             data: {id: id},
             success: function (res) {
-                showCart(res);
+                const url = window.location.toString();
+                if (url.indexOf('cart/view') !== -1) {
+                    window.location = url;
+                } else {
+                    showCart(res);
+                }
                 $('#product-' + id).find('i').removeClass('bi-cart-check-fill').addClass('bi-cart');
             },
             error: function () {

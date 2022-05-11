@@ -3,6 +3,7 @@
 
 namespace app\controllers;
 
+use app\models\User;
 use axross\App;
 
 class CartController extends AppController
@@ -14,7 +15,7 @@ class CartController extends AppController
         $lang = App::$app->getProperty('language');
         $id = (int)$_GET['id'];
         $amount = (int)$_GET['amount'];
-        
+
         if (!$id) {
             return false;
         }
@@ -48,7 +49,7 @@ class CartController extends AppController
         }
         redirect();
     }
-    
+
 
     public function clearAction()
     {
@@ -61,4 +62,22 @@ class CartController extends AppController
         return true;
     }
 
+
+    public function viewAction()
+    {
+        $this->setMeta(gt('tpl_cart_title'));
+    }
+
+    public function checkoutAction()
+    {
+        $lang = App::$app->getProperty('language');
+        if (!empty($_POST)) {
+            if (!User::check_auth()) {
+                $user = new User;
+                $data = $_POST;
+                $user->signup($data, $lang, '', 'cart_checkout_error_register');
+            }
+        }
+        redirect();
+    }
 }

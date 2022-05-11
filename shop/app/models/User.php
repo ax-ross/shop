@@ -24,10 +24,10 @@ class User extends AppModel
     ];
 
     public array $labels = [
-        'email' => 'user_signup_email_input',
-        'password' => 'user_signup_password_input',
-        'name' => 'user_signup_name_input',
-        'address' => 'user_signup_address_input',
+        'email' => 'tpl_signup_email_input',
+        'password' => 'tpl_signup_password_input',
+        'name' => 'tpl_signup_name_input',
+        'address' => 'tpl_signup_address_input',
     ];
 
     public static function check_auth(): bool
@@ -72,19 +72,21 @@ class User extends AppModel
         return false;
     }
 
-    public function signup($data, $lang)
+    public function signup($data, $lang, $success = 'user_signup_success_register', $errors = 'user_signup_error_register')
     {
         $this->load($data);
         if (!$this->validate($data, $lang) || !$this->checkUnique()) {
             $this->getValidationErrors();
             $_SESSION['form_data'] = $data;
+            redirect();
         } else {
             $this->attributes['password'] = password_hash($this->attributes['password'], PASSWORD_DEFAULT);
             if ($this->save('user')) {
-                $_SESSION['success'] = gt('user_signup_success_register');
+                $_SESSION['success'] = gt($success);
             } else {
-                $_SESSION['errors'] = gt('user_signup_error_register');
+                $_SESSION['errors'] = gt($errors);
+                redirect();
             }
-        } 
+        }
     }
 }

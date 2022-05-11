@@ -7,10 +7,10 @@ return [
     'tpl_logout' => 'Выход',
     'tpl_personal_area' => 'Личный кабинет',
     
-    'tpl_signup_email_input' => 'E-mail',
-    'tpl_signup_password_input' => 'Пароль',
-    'tpl_signup_name_input' => 'Имя',
-    'tpl_signup_address_input' => 'Адрес',
+    'tpl_signup_email_input' => 'Поле E-mail',
+    'tpl_signup_password_input' => 'Поле Пароль',
+    'tpl_signup_name_input' => 'Поле Имя',
+    'tpl_signup_address_input' => 'Поле Адрес',
 
 
     'tpl_cart_title' => 'Корзина',

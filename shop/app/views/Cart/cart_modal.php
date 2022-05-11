@@ -46,6 +46,6 @@
     <button type="button" class="btn continue-shopping" data-bs-dismiss="modal"><?php et('tpl_cart_continue_shopping') ?></button>
 
     <?php if (!empty($_SESSION['cart'])) : ?>
-        <button type="button" class="btn checkout"><?php et('tpl_cart_checkout') ?></button>
+        <a href="cart/view" class="btn checkout"><?php et('tpl_cart_checkout') ?></a>
     <?php endif; ?>
 </div>

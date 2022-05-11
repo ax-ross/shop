@@ -8,10 +8,10 @@ return [
     'tpl_personal_area' => 'Personal Area',
     
     'tpl_signup_btn' => 'Register',
-    'tpl_signup_email_input' => 'E-mail',
-    'tpl_signup_password_input' => 'Password',
-    'tpl_signup_name_input' => 'Name',
-    'tpl_signup_address_input' => 'Address',
+    'tpl_signup_email_input' => 'Field E-mail',
+    'tpl_signup_password_input' => 'Field Password',
+    'tpl_signup_name_input' => 'Field Name',
+    'tpl_signup_address_input' => 'Field Address',
     
     'tpl_cart_title' => 'Cart',
     'tpl_cart_photo' => 'Photo',
