@@ -71,4 +71,20 @@ class User extends AppModel
         }
         return false;
     }
+
+    public function signup($data, $lang)
+    {
+        $this->load($data);
+        if (!$this->validate($data, $lang) || !$this->checkUnique()) {
+            $this->getValidationErrors();
+            $_SESSION['form_data'] = $data;
+        } else {
+            $this->attributes['password'] = password_hash($this->attributes['password'], PASSWORD_DEFAULT);
+            if ($this->save('user')) {
+                $_SESSION['success'] = gt('user_signup_success_register');
+            } else {
+                $_SESSION['errors'] = gt('user_signup_error_register');
+            }
+        } 
+    }
 }

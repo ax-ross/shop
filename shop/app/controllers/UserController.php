@@ -19,19 +19,8 @@ class UserController extends AppController
 
         if (!empty($_POST)) {
             $data = $_POST;
-            $this->model->load($data);
-            if (!$this->model->validate($data, $lang) ||!$this->model->checkUnique()) {
-                $this->model->getValidationErrors();
-                $_SESSION['form_data'] = $data;
-            } else {
-                $this->model->attributes['password'] = password_hash($this->model->attributes['password'], PASSWORD_DEFAULT);
-                if ($this->model->save('user')) {
-                    $_SESSION['success'] = gt('user_signup_success_register');
-                } else {
-                    $_SESSION['errors'] = gt('user_signup_error_register');
-                }
-            }
-            redirect();
+            $this->model->signup($data, $lang);
+            redirect(base_url());
         }
 
 
