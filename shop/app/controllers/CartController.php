@@ -3,6 +3,7 @@
 
 namespace app\controllers;
 
+use app\models\Order;
 use app\models\User;
 use axross\App;
 
@@ -75,7 +76,17 @@ class CartController extends AppController
             if (!User::check_auth()) {
                 $user = new User;
                 $data = $_POST;
-                $user->signup($data, $lang, '', 'cart_checkout_error_register');
+                $user_id =  $user->signup($data, $lang, '', 'cart_checkout_error_register');
+            }
+
+            $data['user_id'] = $user_id ?? $_SESSION['user']['id'];
+            $data['note'] = (string)$_POST['note'];
+            $user_email = $_SESSION['user']['email'] ?? (string)$_POST['email'];
+
+            if (!$order_id = Order::saveOrder($data)) {
+                $_SESSION['errors'] = gt('cart_checkout_error_save_order');
+            } else {
+                $_SESSION['success'] = gt('cart_checkout_order_success');
             }
         }
         redirect();

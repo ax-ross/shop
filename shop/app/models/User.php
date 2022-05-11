@@ -81,12 +81,13 @@ class User extends AppModel
             redirect();
         } else {
             $this->attributes['password'] = password_hash($this->attributes['password'], PASSWORD_DEFAULT);
-            if ($this->save('user')) {
+            if ($user_id = $this->save('user')) {
                 $_SESSION['success'] = gt($success);
             } else {
                 $_SESSION['errors'] = gt($errors);
                 redirect();
             }
+            return $user_id;
         }
     }
 }
