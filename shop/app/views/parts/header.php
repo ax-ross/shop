@@ -52,7 +52,7 @@
                                     <li><a class="dropdown-item" href="user/login"><?php et('tpl_login') ?></a></li>
                                     <li><a class="dropdown-item" href="user/signup"><?php et('tpl_signup') ?></a></li>
                                 <?php else : ?>
-                                    <li><a class="dropdown-item" href="user/area"><?php et('tpl_personal_area') ?></a></li>
+                                    <li><a class="dropdown-item" href="user/cabinet"><?php et('tpl_cabinet') ?></a></li>
                                     <li><a class="dropdown-item" href="user/logout"><?php et('tpl_logout') ?></a></li>
                                 <?php endif; ?>
                             </ul>

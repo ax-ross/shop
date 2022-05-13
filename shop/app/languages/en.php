@@ -5,7 +5,7 @@ return [
     'tpl_login' => 'Log in',
     'tpl_signup' => 'Sign up',
     'tpl_logout' => 'Log out',
-    'tpl_personal_area' => 'Personal Area',
+    'tpl_cabinet' => 'Personal Area',
     
     'tpl_signup_btn' => 'Register',
     'tpl_signup_email_input' => 'Field E-mail',
@@ -13,6 +13,11 @@ return [
     'tpl_signup_name_input' => 'Field Name',
     'tpl_signup_address_input' => 'Field Address',
     
+    'tpl_orders' => 'Orders',
+    'tpl_orders_files' => 'Files',
+    'tpl_user_credentials' => 'Credentials',
+    'tpl_user_logout' => 'Log out',
+
     'tpl_cart_title' => 'Cart',
     'tpl_cart_photo' => 'Photo',
     'tpl_cart_product' => 'Product',
