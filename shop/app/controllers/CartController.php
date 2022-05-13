@@ -86,6 +86,11 @@ class CartController extends AppController
             if (!$order_id = Order::saveOrder($data)) {
                 $_SESSION['errors'] = gt('cart_checkout_error_save_order');
             } else {
+                Order::mailOrder($order_id, $user_email, 'mail_order_user');
+                Order::mailOrder($order_id, App::$app->getProperty('admin_email'), 'mail_order_admin');
+                unset($_SESSION['cart']);
+                unset($_SESSION['cart.sum']);
+                unset($_SESSION['cart.amount']);
                 $_SESSION['success'] = gt('cart_checkout_order_success');
             }
         }
