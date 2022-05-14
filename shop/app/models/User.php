@@ -101,4 +101,9 @@ class User extends AppModel
     {
         return R::getAll("SELECT * FROM orders WHERE user_id = ? ORDER BY id DESC LIMIT $start, $perpage", [$user_id]);
     }
+
+    public function get_user_order($order_id, $user_id): array
+    {
+        return R::getRow("SELECT o.*, op.* FROM orders o JOIN order_product op on o.id = op.order_id WHERE o.id = ? AND o.user_id = ?", [$order_id, $user_id]);
+    }
 }

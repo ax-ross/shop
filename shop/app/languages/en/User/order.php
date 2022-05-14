@@ -5,7 +5,7 @@ return [
     'user_order_title' => 'View order',
     'user_order_list' => 'Order list',
     'user_order_product_title' => 'Name',
-    'user_order_product_qty' => 'Qty',
+    'user_order_product_amount' => 'Qty',
     'user_order_product_price' => 'Price',
     'user_order_product_sum' => 'Sum',
     'user_order_product_created' => 'Created',

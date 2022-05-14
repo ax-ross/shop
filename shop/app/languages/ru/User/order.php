@@ -4,7 +4,7 @@ return [
     'user_order_title' => 'Просмотр заказа',
     'user_order_list' => 'Список заказов',
     'user_order_product_title' => 'Наименование',
-    'user_order_product_qty' => 'Кол-во',
+    'user_order_product_amount' => 'Кол-во',
     'user_order_product_price' => 'Цена',
     'user_order_product_sum' => 'Сумма',
     'user_order_product_created' => 'Дата заказа',

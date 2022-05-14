@@ -3,7 +3,7 @@
         <ol class="breadcrumb  bg-light p-2">
             <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="bi bi-house-door-fill"></i></a></li>
             <li class="breadcrumb-item"><a href="user/cabinet"><?php et('tpl_cabinet'); ?></a></li>
-            <li class="breadcrumb-item-active"><?php et('user_orders_title') ?></li>
+            <li class="breadcrumb-item active"><?php et('user_orders_title') ?></li>
         </ol>
     </nav>
 </div>

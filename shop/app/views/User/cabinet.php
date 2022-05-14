@@ -2,7 +2,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb  bg-light p-2">
             <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="bi bi-house-door-fill"></i></a></li>
-            <li class="breadcrumb-item"><?php et('tpl_personal_area'); ?></li>
+            <li class="breadcrumb-item"><?php et('tpl_cabinet'); ?></li>
         </ol>
     </nav>
 </div>
