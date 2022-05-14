@@ -5,6 +5,7 @@ namespace app\controllers;
 
 use app\models\User;
 use axross\App;
+use axross\Pagination;
 
 class UserController extends AppController
 {
@@ -64,5 +65,23 @@ class UserController extends AppController
             redirect(base_url() . 'user/login');
         }
         $this->setMeta(gt('tpl_cabinet'));
+    }
+
+    public function ordersAction()
+    {
+        if (!User::check_auth()) {
+            redirect(base_url() . 'user/login');
+        }
+
+        $page = isset($_GET['page']) ? abs((int)$_GET['page']) : 1;
+        $perpage = App::$app->getProperty('pagination');
+        $total = $this->model->get_count_orders($_SESSION['user']['id']);
+        $pagination = new Pagination($page, $perpage, $total);
+        $start = $pagination->getStart();
+
+        $orders =$this->model->get_user_orders($start, $perpage, $_SESSION['user']['id']);
+        
+        $this->setMeta(gt('user_orders_title'));
+        $this->set(compact('orders', 'pagination', 'total'));
     }
 }

@@ -16,7 +16,7 @@ class Order extends AppModel
     {
         R::begin();
         try {
-            $order = R::dispense('order');
+            $order = R::dispense('orders');
             $order->user_id = $data['user_id'];
             $order->note = $data['note'];
             $order->total = $_SESSION['cart.sum'];
