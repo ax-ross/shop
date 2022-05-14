@@ -24,8 +24,8 @@
                 <tr>
                     <td style="padding: 8px; border: 1px solid #ddd;"><?= $item['title'] ?></td>
                     <td style="padding: 8px; border: 1px solid #ddd;"><?= $item['amount'] ?></td>
-                    <td style="padding: 8px; border: 1px solid #ddd;"><?= $item['price'] ?></td>
-                    <td style="padding: 8px; border: 1px solid #ddd;"><?= $item['price'] * $item['amount'] ?></td>
+                    <td style="padding: 8px; border: 1px solid #ddd;"><?= $item['price'] ?> &#x20bd;</td>
+                    <td style="padding: 8px; border: 1px solid #ddd;"><?= $item['price'] * $item['amount'] ?> &#x20bd;</td>
                 </tr>
             <?php endforeach; ?>
             <tr>
@@ -34,7 +34,7 @@
             </tr>
             <tr>
                 <td colspan="3" style="padding: 8px; border: 1px solid #ddd;"><?php et('tpl_cart_sum') ?></td>
-                <td style="padding: 8px; border: 1px solid #ddd;"><?= $_SESSION['cart.sum'] ?></td>
+                <td style="padding: 8px; border: 1px solid #ddd;"><?= $_SESSION['cart.sum'] ?> &#x20bd;</td>
             </tr>
         </tbody>
     </table>
