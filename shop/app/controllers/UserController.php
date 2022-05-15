@@ -102,4 +102,23 @@ class UserController extends AppController
         $this->set(compact('order'));
     }
 
+
+    public function filesAction()
+    {
+        if (!User::check_auth()) {
+            redirect(base_url() . 'user/login');
+        }
+
+        $lang = App::$app->getProperty('language');
+        $page = isset($_GET['page']) ? abs((int)$_GET['page']) : 1;
+        $perpage = App::$app->getProperty('pagination');
+        $user_id = $_SESSION['user']['id'];
+        $total = $this->model->get_count_files($user_id);
+        $pagination = new Pagination($page, $perpage, $total);
+        $start = $pagination->getStart();
+
+        $files = $this->model->get_user_files($user_id, $start, $perpage, $lang);
+        $this->setMeta(gt('user_files_title'));
+        $this->set(compact('files', 'pagination', 'total'));
+    }
 }

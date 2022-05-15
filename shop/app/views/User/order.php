@@ -24,7 +24,7 @@
                         <thead>
                             <tr>
                                 <th scope="col"><?php et('user_order_product_title') ?></th>
-                                <th scope="col"><?php et('user_orderproduct_price') ?></th>
+                                <th scope="col"><?php et('user_order_product_price') ?></th>
                                 <th scope="col"><?php et('user_order_product_amount') ?></th>
                                 <th scope="col"><?php et('user_order_product_sum') ?></th>
                             </tr>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                 </div>
-            <?php endif ?>
+            <?php endif; ?>
         </div>
     </div>
 </div>
