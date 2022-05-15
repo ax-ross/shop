@@ -121,4 +121,32 @@ class UserController extends AppController
         $this->setMeta(gt('user_files_title'));
         $this->set(compact('files', 'pagination', 'total'));
     }
+
+    public function downloadAction()
+    {
+        if (!User::check_auth()) {
+            redirect(base_url() . 'user/login');
+        }
+
+        $id = abs((int)$_GET['id']);
+        $lang = App::$app->getProperty('language');
+        $user_id = $_SESSION['user']['id'];
+        $file = $this->model->get_user_file($id, $user_id, $lang);
+        if ($file) {
+            $path = WWW . "/downloads/{$file['filename']}";
+            if (file_exists($path)) {
+                header('Content-Type: applocation/octet-stream');
+                header('Content-Disposition: attachment; filename="' . basename($file['original_name'] . '"'));
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize($path));
+                readfile($path);
+                exit();
+            } else {
+                $_SESSION['errors'] = gt('user_download_error');
+            }
+        }
+        redirect();
+    }
 }
