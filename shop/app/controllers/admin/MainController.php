@@ -2,13 +2,16 @@
 
 namespace app\controllers\admin;
 
-use axross\Controller;
 
-class MainController extends Controller
+
+class MainController extends AppController
 {
 
     public function indexAction()
     {
-        echo '<h1>ADMIN</h1>';
+        $title = 'Главная страница';
+        $this->setMeta('Админка :: Главная страница');
+        $this->set(compact('title'));
+        $_SESSION['errors'] = 'test message';
     }
 }
