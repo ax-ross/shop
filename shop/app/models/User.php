@@ -20,7 +20,8 @@ class User extends AppModel
         'email' => ['email'],
         'lengthMin' => [
             ['password', 6]
-        ]
+        ],
+        'optional' => ['email', 'password'],
     ];
 
     public array $labels = [
@@ -75,9 +76,9 @@ class User extends AppModel
     public function signup($data, $lang, $success = 'user_signup_success_register', $errors = 'user_signup_error_register')
     {
         $this->load($data);
-        if (!$this->validate($data, $lang) || !$this->checkUnique()) {
+        if (!$this->validate($this->attributes, $lang) || !$this->checkUnique()) {
             $this->getValidationErrors();
-            $_SESSION['form_data'] = $data;
+            $_SESSION['form_data'] = $this->attributes;
             redirect();
         } else {
             $this->attributes['password'] = password_hash($this->attributes['password'], PASSWORD_DEFAULT);
