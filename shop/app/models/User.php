@@ -92,6 +92,32 @@ class User extends AppModel
         }
     }
 
+    public function change_credentials($data, $lang)
+    {
+        $this->load($data);
+        if (empty($this->attributes['password'])) {
+            unset($this->attributes['password']);
+        }
+        unset($this->attributes['email']);
+        if (!$this->validate($this->attributes, $lang)) {
+            $this->getValidationErrors();
+        } else {
+            if (!empty($this->attributes['password'])) {
+                $this->attributes['password'] = password_hash($this->attributes['password'], PASSWORD_DEFAULT);
+            }
+            if ($this->update('user', $_SESSION['user']['id'])) {
+                $_SESSION['success'] = gt('user_credentials_success');
+                foreach ($this->attributes as $k => $v) {
+                    if (!empty($v) && $k != 'password') {
+                        $_SESSION['user'][$k] = $v;
+                    }
+                }
+            } else {
+                $_SESSION['errors'] = gt('user_credentials_error');
+            }
+        }
+    }
+
     public function get_count_orders($user_id): int
     {
         return R::count('orders', 'user_id = ?', [$user_id]);
@@ -120,6 +146,6 @@ class User extends AppModel
 
     public function get_user_file($id, $user_id, $lang)
     {
-        return R::getRow("SELECT od.*, d.*, dd.* FROM order_download od JOIN download d on d.id = od.download_id JOIN download_description dd on d.id = dd.download_id WHERE od.download_id = ? AND od.user_id = ? AND od.status = 1 AND dd.language_id = ?", [$id, $user_id,$lang['id']]);
+        return R::getRow("SELECT od.*, d.*, dd.* FROM order_download od JOIN download d on d.id = od.download_id JOIN download_description dd on d.id = dd.download_id WHERE od.download_id = ? AND od.user_id = ? AND od.status = 1 AND dd.language_id = ?", [$id, $user_id, $lang['id']]);
     }
 }

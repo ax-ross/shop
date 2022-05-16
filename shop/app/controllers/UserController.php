@@ -10,6 +10,22 @@ use axross\Pagination;
 class UserController extends AppController
 {
 
+    public function credentialsAction()
+    {
+        $lang = App::$app->getProperty('language');
+        if (!User::check_auth()) {
+            redirect(base_url() . '/user/login');
+        }
+
+        if (!empty($_POST)) {
+            $data = $_POST;
+            $this->model->change_credentials($data, $lang);
+            redirect();
+        }
+
+        $this->setMeta(gt('user_credentials_title'));
+    }
+
 
     public function signupAction()
     {
@@ -79,8 +95,8 @@ class UserController extends AppController
         $pagination = new Pagination($page, $perpage, $total);
         $start = $pagination->getStart();
 
-        $orders =$this->model->get_user_orders($start, $perpage, $_SESSION['user']['id']);
-        
+        $orders = $this->model->get_user_orders($start, $perpage, $_SESSION['user']['id']);
+
         $this->setMeta(gt('user_orders_title'));
         $this->set(compact('orders', 'pagination', 'total'));
     }
