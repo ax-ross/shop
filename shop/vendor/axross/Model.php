@@ -77,4 +77,15 @@ abstract class model
         }
         return R::store($table);
     }
+
+    public function update($table, $id)
+    {
+        $tbl = R::load($table, $id);
+        foreach ($this->attributes as $name => $value) {
+            if ($value) {
+                $tbl->$name = $value;
+            }
+        }
+        return R::store($tbl);
+    }
 }
