@@ -33,4 +33,12 @@ class UserController extends AppController
             }
         }
     }
+
+    public function logoutAction()
+    {
+        if ($this->model::isAdmin()) {
+            unset($_SESSION['user']);
+        }
+        redirect(ADMIN . '/user/login-admin');
+    }
 }
