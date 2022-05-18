@@ -12,6 +12,5 @@ class MainController extends AppController
         $title = 'Главная страница';
         $this->setMeta('Админка :: Главная страница');
         $this->set(compact('title'));
-        $_SESSION['errors'] = 'test message';
     }
 }

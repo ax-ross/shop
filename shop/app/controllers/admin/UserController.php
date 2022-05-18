@@ -1,0 +1,36 @@
+<?php
+
+
+namespace app\controllers\admin;
+
+use app\models\admin\User;
+
+/**
+ * @property User $model;
+ */
+class UserController extends AppController
+{
+
+    public function loginAdminAction()
+    {
+
+        if ($this->model::isAdmin()) {
+            redirect(ADMIN);
+        }
+
+        $this->layout = 'login';
+        if (!empty($_POST)) {
+
+            if ($this->model->login(true)) {
+                $_SESSION['success'] = 'Вы успешно авторизованы';
+            } else {
+                $_SESSION['errors'] = 'Логин/пароль введены не верно';
+            }
+            if ($this->model->isAdmin()) {
+                redirect(ADMIN);
+            } else {
+                redirect();
+            }
+        }
+    }
+}

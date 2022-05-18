@@ -2,6 +2,7 @@
 
 namespace app\controllers\admin;
 
+use app\models\admin\User;
 use app\models\AppModel;
 use axross\Controller;
 use axross\App;
@@ -14,6 +15,12 @@ class AppController extends Controller
     public function __construct($route = [])
     {
         parent::__construct($route);
+
+
+        if (!User::isAdmin() && $route['action'] != 'login-admin') {
+            redirect(ADMIN . '/user/login-admin');
+        }
+
         new AppModel;
         $languages = App::$app->setProperty('languages', Language::getLanguages());
         $lang = App::$app->setProperty('language', Language::getLanguage($languages));
