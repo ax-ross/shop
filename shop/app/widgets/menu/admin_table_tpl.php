@@ -2,7 +2,7 @@
 $parent = isset($category['children']);
 
 if (!$parent) {
-    $delete = '<a class="btn btn-danger btn-sm delete href="' . ADMIN . '/category/delete?=id=' . $id . '"><i class="far fa-trash-alt"></i></a>';
+    $delete = '<a class="btn btn-danger btn-sm delete" href="' . ADMIN . '/category/delete?id=' . $id . '"><i class="far fa-trash-alt"></i></a>';
 } else {
     $delete = '';
 }

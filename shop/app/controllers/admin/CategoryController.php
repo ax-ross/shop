@@ -10,4 +10,11 @@ class CategoryController extends AppController
         $this->setMeta("Админка :: {$title}");
         $this->set(compact('title'));
     }
+
+    public function deleteAction()
+    {
+        $id = (int)$_GET['id'];
+        $this->model->delete_category($id);
+        redirect();
+    }
 }
