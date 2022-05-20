@@ -17,4 +17,14 @@ class CategoryController extends AppController
         $this->model->delete_category($id);
         redirect();
     }
+
+    public function addAction()
+    {
+        if (!empty($_POST)) {
+
+        }
+        $title = 'Добавление категории';
+        $this->setMeta("Админка :: {$title}");
+        $this->set(compact('title'));
+    }
 }
