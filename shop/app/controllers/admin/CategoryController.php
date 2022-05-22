@@ -2,6 +2,10 @@
 
 namespace app\controllers\admin;
 
+
+use app\models\admin\Category;
+
+/** @property Category $model */
 class CategoryController extends AppController
 {
     public function indexAction()
@@ -21,7 +25,10 @@ class CategoryController extends AppController
     public function addAction()
     {
         if (!empty($_POST)) {
-
+            if ($this->model->category_validate()) {
+                $_SESSION['success'] = 'Категория сохранена';
+            }
+            redirect();
         }
         $title = 'Добавление категории';
         $this->setMeta("Админка :: {$title}");

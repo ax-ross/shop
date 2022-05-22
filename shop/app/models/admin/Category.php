@@ -2,10 +2,10 @@
 
 namespace app\models\admin;
 
-use axross\Model;
+use app\models\AppModel;
 use RedBeanPHP\R;
 
-class Category extends Model
+class Category extends AppModel
 {
 
     public function delete_category($id)
@@ -37,5 +37,22 @@ class Category extends Model
                 return false;
             }
         }
+    }
+
+    public function category_validate(): bool
+    {
+        $errors = '';
+        foreach ($_POST['category_description'] as $lang_id => $item) {
+            $item['title'] = trim($item['title']);
+            if (empty($item['title'])) {
+            $errors .=  "Не заполнено Наименование во вкладке {$lang_id}<br>";
+            }
+        }
+        if ($errors) {
+            $_SESSION['errors'] = $errors;
+            $_SESSION['form_data'] = $_POST;
+            return false;
+        }
+        return true;
     }
 }
