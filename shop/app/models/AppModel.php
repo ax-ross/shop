@@ -8,7 +8,7 @@ use RedBeanPHP\R;
 
 class AppModel extends Model
 {
-    public function create_slug($table, $field, $str, $id): string
+    public static function create_slug($table, $field, $str, $id): string
     {
         $str = self::str2url($str);
         $res = R::findOne($table, "$field = ?", [$str]);
