@@ -3,6 +3,7 @@
 namespace app\models\admin;
 
 use app\models\AppModel;
+use axross\App;
 use RedBeanPHP\R;
 
 class Category extends AppModel
@@ -58,12 +59,13 @@ class Category extends AppModel
 
     public function save_category(): bool
     {
+        $lang = App::$app->getProperty('language')['id'];
         R::begin();
         try {
             $category = R::dispense('category');
             $category->parent_id = $_POST['parent_id'] == 0 ? null : (int)$_POST['parent_id'];
             $category_id = R::store($category);
-            $category->slug = AppModel::create_slug('category', 'slug', $_POST['category_description'][1]['title'], $category_id);
+            $category->slug = AppModel::create_slug('category', 'slug', $_POST['category_description'][$lang]['title'], $category_id);
             R::store($category);
 
             foreach ($_POST['category_description'] as $lang_id => $item) {
