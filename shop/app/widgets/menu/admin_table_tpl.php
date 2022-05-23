@@ -7,7 +7,7 @@ if (!$parent) {
     $delete = '';
 }
 
-$edit = '<a class="btn btn-info btn-sm href="' . ADMIN . '/category/edit?=id=' . $id . '"><i class="far fa-pencil-alt"></i></a>';
+$edit = '<a class="btn btn-info btn-sm" href="' . ADMIN . '/category/edit?id=' . $id . '"><i class="fas fa-pencil-alt"></i></a>';
 ?>
 
 <tr>
