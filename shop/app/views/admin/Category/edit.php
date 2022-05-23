@@ -39,22 +39,22 @@
                             <div class="tab-pane fade <?php if ($lang['base']) echo 'active show' ?>" id="<?= $k ?>">
                                 <div class="form-group">
                                     <label for="title" class="requried">Наименование</label>
-                                    <input type="text" name="category_description[<?= $lang['id'] ?>][title]" class="form-control" id="title" placeholder="Наименование категории" value="<?= get_field_array_value('catregory_description', $lang['id'], 'title') ?>" required>
+                                    <input type="text" name="category_description[<?= $lang['id'] ?>][title]" class="form-control" id="title" placeholder="Наименование категории" value="<?= $category[$lang['id']]['title'] ? htmlspecialchars($category[$lang['id']]['title']) : '' ?>" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="description">Мета-описание</label>
-                                    <input type="text" name="category_description[<?= $lang['id'] ?>][description]" class="form-control" id="description" placeholder="Мета-описание" value="<?= get_field_array_value('catregory_description', $lang['id'], 'description') ?>">
+                                    <input type="text" name="category_description[<?= $lang['id'] ?>][description]" class="form-control" id="description" placeholder="Мета-описание" value="<?= $category[$lang['id']]['description'] ? htmlspecialchars($category[$lang['id']]['description']) : '' ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="keywords">Ключевые слова</label>
-                                    <input type="text" name="category_description[<?= $lang['id'] ?>][keywords]" class="form-control" id="keywords" placeholder="Ключевые слова" value="<?= get_field_array_value('catregory_description', $lang['id'], 'keywords') ?>">
+                                    <input type="text" name="category_description[<?= $lang['id'] ?>][keywords]" class="form-control" id="keywords" placeholder="Ключевые слова" value="<?= $category[$lang['id']]['keywords'] ? htmlspecialchars($category[$lang['id']]['keywords']) : '' ?>">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="content">Описание категории</label>
-                                    <textarea type="text" name="category_description[<?= $lang['id'] ?>][content]" class="form-control editor" id="content" placeholder="Описание категории" value="<?= get_field_array_value('catregory_description', $lang['id'], 'content') ?>"> </textarea>
+                                    <textarea type="text" name="category_description[<?= $lang['id'] ?>][content]" class="form-control editor" id="content" placeholder="Описание категории"><?= $category[$lang['id']]['content'] ? htmlspecialchars($category[$lang['id']]['content']) : '' ?></textarea>
                                 </div>
                             </div>
                         <?php endforeach; ?>
@@ -64,9 +64,6 @@
 
             <button type="submit" class="btn btn-primary">Сохранить</button>
         </form>
-        <?php if (isset($_SESSION['form_data'])) {
-            unset($_SESSION['form_data']);
-        } ?>
     </div>
 </div>
 <!-- /.card -->
