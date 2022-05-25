@@ -15,7 +15,6 @@
                         'id' => 'parent_id',
                         'required' => 'required',
                     ],
-                    'prepand' => '<option value="0">Самостоятельная категория</option>',
                     'tpl' => APP . '/widgets/menu/admin_select_tpl.php',
                 ]); ?>
             </div>
@@ -45,13 +44,7 @@
             </div>
             <div class="form-group">
                 <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="status" name="status" checked>
-                    <label for="status" class="custom-control-label">Показать на сайте</label>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="hit" name="hit" checked>
+                    <input type="checkbox" class="custom-control-input" id="hit" name="hit">
                     <label for="hit" class="custom-control-label">Хит</label>
                 </div>
             </div>
@@ -90,9 +83,9 @@
                         </div>
                         <div class="card-body">
                             <button class="btn btn-success" id="add-gallery-img"
-                                    onclick="popupBaseImage(); return false;">Загрузить
+                                    onclick="popupGalleryImage(); return false;">Загрузить
                             </button>
-                            <div id="base-img-output" class="upload-images gallery-image"></div>
+                            <div id="gallery-img-output" class="upload-images gallery-image"></div>
                         </div>
                     </div>
                 </div>
@@ -138,14 +131,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="exerpt" class="required">Краткое описание</label>
-                                    <input type="text" name="product_description[<?= $lang['id'] ?>][exerpt]"
-                                           class="form-control" id="exerpt" placeholder="Краткое описание"
-                                           value="<?= get_field_array_value('product_description', $lang['id'], 'exerpt') ?>">
+                                    <label for="excerpt" class="required">Краткое описание</label>
+                                    <input type="text" name="product_description[<?= $lang['id'] ?>][excerpt]"
+                                           class="form-control" id="excerpt" placeholder="Краткое описание"
+                                           value="<?= get_field_array_value('product_description', $lang['id'], 'excerpt') ?>">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="content">Описание товара</label>
+                                    <label for="content" class="required">Описание товара</label>
                                     <textarea name="product_description[<?= $lang['id'] ?>][content]"
                                               class="form-control editor" id="content" rows="3"
                                               placeholder="Описание товара"><?= get_field_array_value('product_description', $lang['id'], 'content') ?></textarea>
