@@ -15,6 +15,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?= PATH ?>/adminlte/dist/css/adminlte.min.css">
     <link rel="stylesheet" href="<?= PATH ?>/adminlte/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 
     <script src="<?= PATH ?>/adminlte/ckeditor/ckeditor.js"></script>
     <script src="<?= PATH ?>/adminlte/ckfinder/ckfinder.js"></script>

@@ -10,6 +10,21 @@ a:hover {
     color: #000;
 }
 
+/* Pagination */
+nav:focus-visible,
+ul.pagination:focus-visible,
+ul.pagination li:focus-visible,
+ul.pagination li a:focus-visible {
+    outline: none;
+}
+
+.page-link {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+/* End pagination */
+
 .ck-editor__editable {
     min-height: 300px;
 }
