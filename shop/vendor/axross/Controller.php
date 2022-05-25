@@ -2,7 +2,7 @@
 
 namespace axross;
 
-abstract class controller
+abstract class Controller
 {
 
     public array $data = [];
