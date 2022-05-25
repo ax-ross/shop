@@ -38,7 +38,7 @@
                         <?php foreach (\axross\App::$app->getProperty('languages') as $k => $lang): ?>
                             <div class="tab-pane fade <?php if ($lang['base']) echo 'active show' ?>" id="<?= $k ?>">
                                 <div class="form-group">
-                                    <label for="title" class="requried">Наименование</label>
+                                    <label for="title" class="required">Наименование</label>
                                     <input type="text" name="category_description[<?= $lang['id'] ?>][title]" class="form-control" id="title" placeholder="Наименование категории" value="<?= get_field_array_value('catregory_description', $lang['id'], 'title') ?>" required>
                                 </div>
 
