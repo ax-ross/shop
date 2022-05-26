@@ -12,6 +12,6 @@ define("CONFIG", ROOT . '/config');
 define("LAYOUT", "shop");
 define("PATH", "http://127.0.0.1");
 define("ADMIN", "http://127.0.0.1:80/admin");
-define("NO_IMAGE", "uploads/no_image.jpeg");
+define("NO_IMAGE", "uploads/no_image.jpg");
 
 require_once ROOT . '/vendor/autoload.php';
