@@ -27,7 +27,7 @@
                             <td><?= $product['id'] ?></td>
                             <td><img src="<?= PATH ?>/<?= $product['img'] ?>" alt="" height="40"></td>
                             <td><?= $product['title'] ?></td>
-                            <td><?= $product['price'] ?></td>
+                            <td><?= $product['price'] ?> &#x20bd;</td>
                             <td><?= $product['status'] ? '<i class="far fa-eye"></i>' : '<i class="far fa-eye-slash"></i>' ?></td>
                             <td><?= $product['is_download'] ? 'Цифровой товар' : 'Обычный товар' ?></td>
                             <td width="50">
