@@ -47,6 +47,30 @@ class UserController extends AppController
         $this->set(compact('title', 'pagination', 'total', 'orders', 'user'));
     }
 
+    public function addAction()
+    {
+     if (!empty($_POST)) {
+         $lang = App::$app->getProperty('language');
+         $data = $_POST;
+         $this->model->load($data);
+         if (!$this->model->validate($this->model->attributes, $lang) || !$this->model->checkUnique('Этот email уже занят')) {
+             $this->model->getValidationErrors();
+             $_SESSION['form_data'] = $data;
+         } else {
+             $this->model->attributes['password'] = password_hash($this->model->attributes['password'], PASSWORD_DEFAULT);
+             if ($this->model->save('user')) {
+                 $_SESSION['success'] = 'Пользователь добавлен';
+             } else {
+                 $_SESSION['errors'] = 'Ошибка добавления пользователя';
+             }
+         }
+         redirect();
+     }
+        $title = 'Новый пользоваель';
+        $this->setMeta("Админка :: {$title}");
+        $this->set(compact('title'));
+    }
+
     public function editAction()
     {
         $id = (int)$_GET['id'];
