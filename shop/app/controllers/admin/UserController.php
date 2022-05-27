@@ -47,6 +47,41 @@ class UserController extends AppController
         $this->set(compact('title', 'pagination', 'total', 'orders', 'user'));
     }
 
+    public function editAction()
+    {
+        $id = (int)$_GET['id'];
+        $user = $this->model->get_user($id);
+        if (!$user) {
+            throw new \Exception('Not found user', 404);
+        }
+
+        if (!empty($_POST)) {
+
+            $data = $_POST;
+            $this->model->load($data);
+            if (empty($this->model->attributes['password'])) {
+                unset($this->model->attributes['password']);
+            }
+            $lang = App::$app->getProperty('language');
+            if (!$this->model->validate($this->model->attributes, $lang) || !$this->model->checkEmail($user)) {
+                $this->model->getValidationErrors();
+            } else {
+                if (!empty($this->model->attributes['password'])) {
+                    $this->model->attributes['password'] = password_hash($this->model->attributes['password'], PASSWORD_DEFAULT);
+                }
+                if ($this->model->update('user', $id)) {
+                    $_SESSION['success'] = 'Данные пользователя обновлены';
+                } else {
+                    $_SESSION['errors'] = 'Ошибка обновления профиля пользователя';
+                }
+            }
+            redirect();
+        }
+        $title = 'Редактирование пользователя';
+        $this->setMeta("Админка :: {$title}");
+        $this->set(compact('title', 'user'));
+    }
+
     public function loginAdminAction()
     {
 
