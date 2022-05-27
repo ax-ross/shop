@@ -4,12 +4,30 @@
 namespace app\controllers\admin;
 
 use app\models\admin\User;
+use axross\App;
+use axross\Pagination;
+use RedBeanPHP\R;
 
 /**
  * @property User $model;
  */
 class UserController extends AppController
 {
+
+    public function indexAction()
+    {
+        $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+        $perpage = App::$app->getProperty('pagination');
+        $total = R::count('user');
+        $pagination = new Pagination($page, $perpage, $total);
+        $start = $pagination->getStart();
+
+        $users = $this->model->get_users($start, $perpage);
+        $title = 'Список пользователей';
+        $this->setMeta("Админка :: {$title}");
+        $this->set(compact('title', 'pagination', 'total', 'users'));
+
+    }
 
     public function loginAdminAction()
     {
