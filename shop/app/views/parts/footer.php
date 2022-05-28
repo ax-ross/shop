@@ -6,7 +6,7 @@
                     <h4><?php et('tpl_info') ?></h4>
 
                     <?php new \app\widgets\page\Page([
-                        'cache' => 0,
+                        'cache' => 30,
                         'class' => 'list-unstyled',
                         'prepend' => '<li><a href="' . base_url() . '">' . gt('tpl_homepage') . '</a></li>',
                     ]); ?>
