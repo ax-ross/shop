@@ -35,4 +35,21 @@ class PageController extends AppController
         }
         redirect();
     }
+
+    public function addAction()
+    {
+        if (!empty($_POST)) {
+            if ($this->model->page_validate()) {
+                if ($this->model->save_page()) {
+                    $_SESSION['success'] = 'Страница успешно добавлена';
+                } else {
+                    $_SESSION['errors'] = 'Ошибка добавления страницы';
+                }
+            }
+            redirect();
+        }
+        $title = "Добавление страницы";
+        $this->setMeta("Админка :: {$title}");
+        $this->set(compact('title'));
+    }
 }
