@@ -27,7 +27,7 @@ class PageController extends AppController
 
     public function deleteAction()
     {
-        $id = isset($_GET['id']) ? (int) $_GET['id'] : '';
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : '';
         if ($this->model->delete_page($id)) {
             $_SESSION['success'] = 'Страница успешно удалена';
         } else {
@@ -51,5 +51,28 @@ class PageController extends AppController
         $title = "Добавление страницы";
         $this->setMeta("Админка :: {$title}");
         $this->set(compact('title'));
+    }
+
+    public function editAction()
+    {
+        $id = isset($_GET['id']) ? (int)$_GET['id'] : '';
+        if (!empty($_POST)) {
+            if ($this->model->page_validate()) {
+                if ($this->model->update_page($id)) {
+                    $_SESSION['success'] = 'Страница успешно обновлена';
+                } else {
+                    $_SESSION['errors'] = 'Ошибка обновления страницы';
+                }
+            }
+            redirect();
+        }
+
+        $page = $this->model->get_page($id);
+        if (!$page) {
+            throw new  \Exception('Page not found', 404);
+        }
+        $title = "Редактирование страницы";
+        $this->setMeta("Админка :: {$title}");
+        $this->set(compact('title', 'page'));
     }
 }
